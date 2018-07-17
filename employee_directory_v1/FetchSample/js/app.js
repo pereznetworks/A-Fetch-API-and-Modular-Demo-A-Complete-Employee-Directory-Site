@@ -4,7 +4,8 @@
 var getDirectory = (function(exports){
 
   var exports = {
-    employees:[],
+    fetchResults:[],
+    employees: []
   }
 
   exports.checkStatus = function(response){
@@ -53,7 +54,8 @@ window.onload = function(e){
   Promise.all([
     getDirectory.fetchDataFrom('https://randomuser.me/api/?results=12')
   ]).then(data => {
-        getDirectory.employees = data;
-        getDirectory.displayData(getDirectory.employees);
+        getDirectory.fetchResults = data;
+        getDirectory.displayData(getDirectory.fetchResults);
+        getDirectory.employees = getDirectory.fetchResults[0].results;
     });
 };
