@@ -2,14 +2,12 @@
 
 # PHASE COMPLETE: Project Prep
 
-    To prepare for this project you'll need to make sure you complete and understand these steps.
-
-    Download the sample layouts. We've provided two files:
+    Download the sample layouts:
 
       employee_directory.png - an example of what the main directory should look like
       employee_overlay.png - an example of the overlay providing more detail
 
-      You will need to create your own HTML, CSS and JS files for this project.
+      will need to create the entire HTML, CSS in addition to JS for this project.
 
     Review the Random User Generator documentation.
 
