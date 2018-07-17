@@ -41,7 +41,7 @@ var getDirectory = (function(exports){
 
 }(getDirectory || { } ));  // end IIFE
 
-// module for displaying and enabling dir in html doc
+// module for html display and functionality for the employee directory 
 var showDirectory = (function(exports, employeeDir){
 
 }(showDirectory || {}, getDirectory.employees));
