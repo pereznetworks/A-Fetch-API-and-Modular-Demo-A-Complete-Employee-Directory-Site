@@ -1,11 +1,10 @@
 // using module pattern for employee directory site
 
 // module for fetch api function calls
-var getDirectory = (function(exports){
+var getData = (function(exports){
 
   var exports = {
-    fetchResults:[],
-    employees: []
+    fetchResults:[]
   }
 
   exports.checkStatus = function(response){
@@ -39,7 +38,7 @@ var getDirectory = (function(exports){
 
   return exports
 
-}(getDirectory || { } ));  // end getDirectory module
+}(getData || { } ));  // end getDirectory module
 
 // module for html display and functionality for the employee directory
 var displayDirectory = (function(exports){
@@ -70,11 +69,10 @@ var displayDirectory = (function(exports){
 // managing the fetch api calls with promise.all()
 window.onload = function(e){
   Promise.all([
-    getDirectory.fetchDataFrom('https://randomuser.me/api/?results=12')
+    getData.fetchDataFrom('https://randomuser.me/api/?results=12')
   ]).then(data => {
-        getDirectory.fetchResults = data;
-        getDirectory.displayData(getDirectory.fetchResults);
-        getDirectory.employees = getDirectory.fetchResults[0].results;
-        displayDirectory.employees = getDirectory.fetchResults[0].results;
+        getData.fetchResults = data;
+        getData.displayData(getData.fetchResults);
+        displayDirectory.employees = getData.fetchResults[0].results;
     });
 };
