@@ -39,12 +39,33 @@ var getDirectory = (function(exports){
 
   return exports
 
-}(getDirectory || { } ));  // end IIFE
+}(getDirectory || { } ));  // end getDirectory module
 
-// module for html display and functionality for the employee directory 
-var showDirectory = (function(exports, employeeDir){
+// module for html display and functionality for the employee directory
+var displayDirectory = (function(exports){
 
-}(showDirectory || {}, getDirectory.employees));
+  var exports = {
+    employees: [],
+  }
+
+  // forEach employee,
+      // create an employee basic info 'col-3 userBox' div
+      // append as child of div '.row' on the employee directory page
+
+  // forEach employee, create an employee details info modal window
+
+  // when employee basic info is moused-over
+    // activate 'hover' style
+
+  // when employee basic info div is clicked on
+    // display modal windows with that employee's detials info div
+    // with modal Window open, toogle between employees
+    // when modal window closed return to employee directory
+
+  // search function: filter employee by any of the basic or details info
+
+
+}(displayDirectory || {}));  // end displayDirectory module
 
 // managing the fetch api calls with promise.all()
 window.onload = function(e){
@@ -54,5 +75,6 @@ window.onload = function(e){
         getDirectory.fetchResults = data;
         getDirectory.displayData(getDirectory.fetchResults);
         getDirectory.employees = getDirectory.fetchResults[0].results;
+        displayDirectory.employees = getDirectory.fetchResults[0].results;
     });
 };
