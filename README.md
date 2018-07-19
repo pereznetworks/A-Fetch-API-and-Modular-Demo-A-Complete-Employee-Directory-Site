@@ -14,8 +14,9 @@
     promise.resolve and promise reject
      to keep promise from logging fetch status to console
 
-# PHASE 1 COMPLETE: Project Prep complete
-   Ready for PHASE 2: required features and functionality
+# PHASE 1: Project Prep: COMPLETE
+
+    Ready for PHASE 2: required features and functionality
 
     Download the sample layouts:
 
