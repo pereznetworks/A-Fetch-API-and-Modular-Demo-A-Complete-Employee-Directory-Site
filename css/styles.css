@@ -105,6 +105,9 @@ body{
   .userBox{
     font-size: .8em;
   }
+  .directoryTitle{
+    font-size: 1.4em;
+  }
   .userBox ul{
     list-style-type: none;
     text-align: left;
@@ -127,6 +130,9 @@ body{
 @media screen and (max-width: 700px){
   .col-4 {
     width: 45%;
+  }
+  .directoryTitle{
+    font-size: 1.2em;
   }
   .userBox{
     font-size: 1em;
@@ -156,6 +162,10 @@ body{
 @media screen and (max-width: 480px){
   .col-4 {
     width: 70%;
+  }
+  .directoryTitle{
+    font-size: 1em;
+    font-weight: 200;
   }
   .userBox{
     font-size: 1em;
