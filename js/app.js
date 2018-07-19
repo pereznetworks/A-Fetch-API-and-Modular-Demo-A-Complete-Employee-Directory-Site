@@ -1,3 +1,10 @@
+  /* TODO:
+      Modal window, hover affect,
+      toggle back and forth between employees when modal window open
+      search/filter
+      promise.resolve and promise reject to keep promise fetch status from logging to console
+  */
+
 // using module pattern for employee directory site
 
 // module for fetch api function calls
@@ -33,7 +40,7 @@ var getData = (function(exports){
       .then( exports.checkStatus ) // verify status 'ok'
       .then( res => res.json() ) // parse response using json()
       .catch( error => console.log('Looks like there was a problem: ', error ) )
-      // instead of logging to console, should probably do something better with errors
+      // TODO: instead of logging to console, should probably do something better with errors
     }
 
   // simple arrow function to 'log' some data
@@ -54,10 +61,12 @@ var getData = (function(exports){
       getData.fetchDataFrom(url)
     ]).then(data => {
           getData.fetchResults = data;
-          getData.displayData(getData.fetchResults);
+          // getData.displayData(getData.fetchResults);
           employees = (getData.fetchResults[0].results);
-          getData.displayData(employees);
+          // getData.displayData(employees);
           makeEmployeeDirectory(employees);
+          // TODO: add a promise.resolve and promise.reject
+          // this should keep promise fetch status from loggin to console
       });
   };
 
@@ -115,17 +124,16 @@ var getData = (function(exports){
     let employeeDirectory = document.getElementsByClassName('row')[0];
     employees.forEach(function(employee, index){
       employeeDirectory.appendChild(makeEmployeeDiv(employee));
-      console.log(makeEmployeeDiv(employee));
       });
     };
   // add 1 div with basic info for each employee
 
   // wait until html page loads, then get 12 random users
   window.onload = function(e){
-    getDirectory('https://randomuser.me/api/?results=12');
+    let status = getDirectory('https://randomuser.me/api/?results=12');
   };
 
-  /*
+  /* TODO: Modal window, hover affect, search/filter
   // forEach employee, create an employee details info modal window
 
   // when employee basic info is moused-over
