@@ -1,6 +1,21 @@
 # TD-Project5
 
-# PHASE COMPLETE: Project Prep
+# TODO: STATUS OF PROJECT
+
+    bug: some city names are more than 1 word
+      need to capitalize first letter of each word of multiple-word city name
+
+    Modal window, hover affect,
+
+    toggle back and forth between employees when modal window open
+
+    search/filter
+
+    promise.resolve and promise reject
+     to keep promise from logging fetch status to console
+
+# PHASE 1 COMPLETE: Project Prep complete
+   Ready for PHASE 2: required features and functionality
 
     Download the sample layouts:
 
@@ -34,8 +49,6 @@
           able to store results from fetch in a fetchResults array
           able to store the 12 random users in a "employee" array
           reloading page fetch 12 completely different random persons
-
-      ready for PHASE 2: required features and functionality
 
 # PHASE 2: Required Features and Functionality
 
