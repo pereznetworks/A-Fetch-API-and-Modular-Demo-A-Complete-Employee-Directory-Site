@@ -72,10 +72,10 @@ var getData = (function(exports){
       return Word;
     };
 
-    const conbineProNoun = function(firstWord, secondWord){
+    const conbineProNoun = function(firstWord, space, secondWord){
       firstWord = capFirstLtrOf(firstWord);
       secondWord = capFirstLtrOf(secondWord);
-      return firstWord.concat(' ', secondWord);
+      return firstWord.concat(space, secondWord);
     };
 
     const directory = document.createElement('div');
@@ -126,10 +126,6 @@ var getData = (function(exports){
   };
 
   /*
-  // forEach employee,
-      // create an employee basic info 'col-3 userBox' div
-      // append as child of div '.row' on the employee directory page
-
   // forEach employee, create an employee details info modal window
 
   // when employee basic info is moused-over
