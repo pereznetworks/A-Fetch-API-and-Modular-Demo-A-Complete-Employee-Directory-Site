@@ -2,16 +2,26 @@
 
 # TODO: STATUS OF PROJECT
 
-    bug: some city names are more than 1 word
+    completed so far:
+
+      using module pattern
+      able to get 12 random employees
+      able to extract basic info for each
+      main employee directory displays employee basic info
+      main employee directory follows mock-up styling
+      adjusted media-queries for RWD
+        all basic info and images appear "as designed" for all screen sizes
+
+    up next: Modal window, hover affect,
+
+    up next: toggle back and forth between employees when modal window open
+
+    up next: search/filter
+
+    fix bug: some city names are more than 1 word
       need to capitalize first letter of each word of multiple-word city name
 
-    Modal window, hover affect,
-
-    toggle back and forth between employees when modal window open
-
-    search/filter
-
-    promise.resolve and promise reject
+    fix bug: promise.resolve and promise reject
      to keep promise from logging fetch status to console
 
 # PHASE 1: Project Prep: COMPLETE
