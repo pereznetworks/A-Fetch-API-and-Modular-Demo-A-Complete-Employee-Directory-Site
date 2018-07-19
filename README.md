@@ -33,40 +33,55 @@
 
   To complete this project, follow the instructions below. If you get stuck, ask a question in the community.
 
-    Get and display 12 random users
+  Required Feature 1:
 
-        Using information provided from The Random User Generator API, display 12 users, along with some basic information for each:
-        Image
-        First and Last Name
-        Email
-        City or location
+        COMPLETE: Get and display 12 random users
 
-    Create a modal window
+            Using information provided from The Random User Generator API, display 12 users, along with some basic information for each:
+            Image
+            First and Last Name
+            Email
+            City or location
 
-        When any part of an employee item in the directory is clicked, a modal window should pop up with the following details displayed:
-        Image
-        Name
-        Email
-        City or location
-        Cell Number
-        Detailed Address, including street name and number, state or country, and post code.
-        Birthday
-        Make sure there’s a way to close the modal window
+  Required Feature 2:
 
-    Structure and style
+        UP NEXT: Create a modal window
 
-        The user directory and modal pop up window should roughly match the provided mockups
-        Display the users in a grid or table layout
-        Add a hover state to the employee items
+            When any part of an employee item in the directory is clicked, a modal window should pop up with the following details displayed:
+            Image
+            Name
+            Email
+            City or location
+            Cell Number
+            Detailed Address, including street name and number, state or country, and post code.
+            Birthday
+            Make sure there’s a way to close the modal window
+
+  Required Feature 3:
+
+        50%: Structure and style
+
+            The user directory and modal pop up window should roughly match the provided mockups. Display the users in a grid or table layout
+
+              Complete for
+                User directory.
+
+              Up next for ....
+                Model pop-up.
+                Add a hover state to the employee items
 
 # PHASE 3: Extra Credit Features
 
     To get an "exceeds" rating, you can expand on the project in the following ways:
 
-    Step 1: Add a way to filter the directory by name or username.
+    Feature 1:
 
-        To do this, you’ll need to request a random user nationality that will only return data in the English alphabet. Note: you don't have to rely on the API to return search results. You'll need to write functionality that filters results once they already on the page.
+        Add a way to filter the directory by name or username.
 
-    Step 2: Add a way to toggle back and forth between employees when the modal window is open.
+          To do this, you’ll need to request a random user nationality that will only return data in the English alphabet. Note: you don't have to rely on the API to return search results. You'll need to write functionality that filters results once they already on the page.
+
+    Feature 2:
 
         Add a way to toggle back and forth between employees when the modal window is open.
+
+          Add a way to toggle back and forth between employees when the modal window is open.
