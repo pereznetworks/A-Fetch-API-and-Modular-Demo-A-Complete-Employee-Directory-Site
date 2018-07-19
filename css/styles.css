@@ -53,14 +53,13 @@ body{
 .col-12 {width: 100%;}
 
 .directoryTitle{
-  font-style: oblique;
-  font-size: 1.2em;
+  font-style: normal;
+  font-size: 1.6em;
   color:grey;
   font-weight:400;
   margin: 5px;
   padding-left: 25px;
-
-
+  padding-bottom: 20px;
 }
 .userBox{
     font-size: .8em;
@@ -74,10 +73,12 @@ body{
 .userBox ul{
   list-style-type: none;
   text-align: left;
-  margin: 10px 1px 10px 1px;
+  margin: 15px 1px 10px 1px;
   padding: 5px 1px 5px 1px;
 }
 .userBox ul li{
+  font-size: 1em;
+  color: silver;
   margin: 1px 1px 1px 1px;
   padding: 1px 1px 1px 1px;
 }
@@ -88,10 +89,10 @@ body{
   height: auto;
   border-radius: 100%;
   float: left;
-  margin: 5px 30px 5px 5px;
+  margin: 5px 10px 5px 5px;
 }
 
-.fnamelname {
+.userBox .fnamelname {
   color: black;
   font-size: 1.2em;
   font-style: oblique;
