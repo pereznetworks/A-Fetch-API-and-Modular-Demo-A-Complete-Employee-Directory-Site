@@ -60,11 +60,11 @@
   padding: 10px 0;
 }
   .modal-basic-img {
-      margin: 15px auto;
+      margin: 10px auto;
       display: block;
       width: 40%;
+      height: 40%;
       max-width: 400px;
-      padding: 40px 10px 40px 10px;
       border-radius: 100%;
       background-color: grey;
   }

@@ -10,8 +10,7 @@
 var getData = (function(exports){
 
   var exports = {
-    fetchResults:[],
-    fetchSuccess: false
+    fetchResults:[]
   }
 
   exports.checkStatus = function(response){
@@ -59,22 +58,28 @@ var getData = (function(exports){
       });
   };
 
+  const capFirstLtrOf = function(word){
+    let firstLetter = word[0];
+    firstLetter = firstLetter.toUpperCase();
+    let restOf = word.slice(1, word.length);
+    let Word = firstLetter + restOf;
+    return Word;
+  };
+
+  const combineProNoun = function(firstWord, space, secondWord){
+    firstWord = capFirstLtrOf(firstWord);
+    secondWord = capFirstLtrOf(secondWord);
+    return firstWord.concat(space, secondWord);
+  };
+
+  const combineLocation = function(employeeLocation){
+    employeeLocation.number = capFirstLtrOf(firstWord);
+    secondWord = capFirstLtrOf(secondWord);
+    return firstWord.concat(space, secondWord);
+  };
+
   // create a div, insert employee's basic info
   const makeEmployeeDiv = function(employee){
-
-    const capFirstLtrOf = function(word){
-      let firstLetter = word[0];
-      firstLetter = firstLetter.toUpperCase();
-      let restOf = word.slice(1, word.length);
-      let Word = firstLetter + restOf;
-      return Word;
-    };
-
-    const conbineProNoun = function(firstWord, space, secondWord){
-      firstWord = capFirstLtrOf(firstWord);
-      secondWord = capFirstLtrOf(secondWord);
-      return firstWord.concat(space, secondWord);
-    };
 
     const directory = document.createElement('div');
 
@@ -97,7 +102,7 @@ var getData = (function(exports){
     employeeLocation.className = 'location';
 
     employeeImg.src = employee.picture.large;
-    employeeFNameLName.textContent = conbineProNoun(employee.name.first, ' ', employee.name.last);
+    employeeFNameLName.textContent = combineProNoun(employee.name.first, ' ', employee.name.last);
     employeeEMail.textContent = employee.email;
     employeeLocation.textContent = capFirstLtrOf(employee.location.city);
     employeeBasicInfoUl.appendChild(employeeFNameLName);
@@ -125,14 +130,28 @@ var getData = (function(exports){
     const employeeBoxes = document.getElementsByClassName('col-4');
     const modalWindow = document.getElementById('modal-userBox');
     const closeModalWindow = document.getElementById('closeModalWindow');
+    const employeeImg = document.getElementById('modal-avatarImg');
+    const employeeName = document.getElementById('name');
+    const employeeEmail = document.getElementById('email');
+    const employeeLocation = document.getElementById('location');
+    const employeeFullAddress = document.getElementById('full-address');
+    const employeeCellNumber = document.getElementById('phone');
+    const employeeDOB = document.getElementById('dob');
 
-
-
-    // adding the eventlisteners for each employee div
+    // adding an eventlistener for each employee div
     for (let i = 0; i < employeeBoxes.length; i++){
       employeeBoxes[i].addEventListener('click', function(e){
+        const employees = getData.fetchResults[0].results;
+        // display modal and add basic and contact info from employee div clicked on
         modal.style.display = 'block';
         modalWindow.style.display = "block";
+        employeeImg.src = employees[i].picture.large;
+        employeeName.textContent = combineProNoun(employees[i].name.first, ' ', employees[i].name.last);
+        employeeEmail.textContent = employees[i].email;
+        employeeLocation.textContent = capFirstLtrOf(employees[i].location.city);
+        employeeFullAddress.textContent = `${employees[i].location.street}, ${employees[i].location.city}, ${employees[i].location.state}, ${employees[i].location.postcode}`;
+        employeeCellNumber.textContent = employees[i].phone;
+        employeeDOB.textContent = employees[i].dob;
       });
     }
 
@@ -166,3 +185,70 @@ var getData = (function(exports){
 
 
 }(getData));  // end displayDirectory module
+
+// TODO: function to parse street address, cap'ing first letter of each proper name
+const parseStreetAddress = function(addressStr){
+        var address = addressStr;
+        var startI = 0;
+        var endI = 0;
+        var streetNameParsed = 0;
+        var streetNumsParsed = 0;
+        var addressNumParsed = false;
+        var aptNumParsed = false
+        var addressNum = '';
+        var aptNum = '';
+        var addressStreet1 = '';
+        var addressStreet2 = '';
+        var addressStreet3 = '';
+
+        const isStreetNumParsed = function(streetNumsParsed){
+          if (streetNumsParsed < 0){
+            return true;
+          }
+        }
+
+        for (let i = 0; i < address.length; i++ ) {
+
+           var tempNum = parseInt(address[i]);
+           if (tempNum !== 'NaN' && !addressNumParsed){
+             addressNum += tempNum.toString();
+             streetNumsParsed += .1;
+           } else if (tempNum !== 'NaN' && streetNameParsed <= 2 && streetNumsParsed !== 0){
+             aptNum += tempNum.toString();
+
+           } else if (address[i] === ' ' && streetNameParsed == 2.5){
+             endI = address[i];
+             var addressStreet3 = address.slice(startI, endI);
+             streetNameParsed = 3;
+            addressNumParsed = isStreetNumParsed(streetNameParsed);
+
+           } else if (address[i] === ' ' && streetNameParsed == 2){
+             startI = address[i];
+             streetNameParsed = 2.5;
+
+           } else if (address[i] === ' ' && streetNameParsed == 1.5){
+             endI = address[i];
+             var addressStreet2 = address.slice(startI, endI);
+             streetNameParsed = 2;
+             addressNumParsed = isStreetNumParsed(streetNameParsed);
+
+           } else if (address[i] === ' ' && streetNameParsed == 1){
+             startI = address[i];
+             streetNameParsed = 1.5;
+
+           } else if (address[i] === ' ' && streetNameParsed == 0.5){
+             endI = address[i];
+             var addressStreet1 = address.slice(startI, endI);
+             streetNameParsed = 1;
+            addressNumParsed = isStreetNumParsed(streetNameParsed);
+
+           } else if (address[i] === ' ' && streetNameParsed == 0){
+             startI = address[i + 1];
+             streetNameParsed = 0.5;
+             addressNumParsed = isStreetNumParsed(streetNameParsed);
+           }
+       }
+
+       var parsedStreetAddress = ''; // TODO: have to piece parts back together in original order
+       return parsedStreetAddress;
+};
