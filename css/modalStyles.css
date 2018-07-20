@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-#modal{
+#modal-dimMainPage{
   /* dim when modal window enabled */
   display: none;  /* hidden initially */
   left 0;
@@ -16,26 +16,6 @@
   padding: 0;
   background-color: rgba(192, 192, 192, .5);
 }
-
-#modal-userBox{  /* the modal window itself*/
-  display: none;  /* hidden initially */
-  margin: 10% 35% 10% 35%; /* places content in roughly center of window */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  /* padding-top: 100px;  Location of the box */
-  left: 0;
-  top: 0;
-  width: 300px; /*  width */
-  height: 300px; /* height */
-  overflow: auto; /* Enable scroll if needed */
-  border-radius: 5%;
-  /* background-color: rgb(255, 255, 255); Fallback color */
-  background-color: rgba(255, 255, 255,1); /* White, Solid */
-}
-
-.modal-ul{
-  padding: 1px;
-}
 #closeModalWindow{  /* styling the modal window close button */
   position: absolute;
   top: 5px;
@@ -47,37 +27,82 @@
   border-style: none;
 }
 
+#modal-userBox{  /* the modal window itself*/
+  display: none;  /* hidden initially */
+  margin: 10% 35% 10% 35%; /* places content in roughly center of window */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  /* padding-top: 100px;  Location of the box */
+  left: 0;
+  top: 0;
+  width: 260px; /*  width */
+  height: 300px; /* height */
+  overflow: auto; /* Enable scroll if needed */
+  border-radius: 5%;
+  /* background-color: rgb(255, 255, 255); Fallback color */
+  background-color: rgba(255, 255, 255,1); /* White, Solid */
+}
+
 /* basic class for styling detail info with-in modal window */
-[class*="modal-"]{
+[class*="modal"]{
     font-size: .8em;
     display: block;
     width: 100%;
     max-width: 100%;
     text-align: center;
     color: grey;
-    height: 15px;
     list-style-type: none;
+    padding: 0;
+    height: 20px;
 }
+.modal-basic-ul{
+  height: 160px;
+  padding: 10px 0;
+}
+  .modal-basic-img {
+      margin: 15px auto;
+      display: block;
+      width: 40%;
+      max-width: 400px;
+      padding: 40px 10px 40px 10px;
+      border-radius: 100%;
+      background-color: grey;
+  }
+  .modal-basic-name{
+    color: #000; /* black */
+    font-size: 1em;
+    font-weight: bold;
 
-/* picture of employee with-in modal window  */
-.modal-img {
-    margin: 10px 60px;
+  }
+  .modal-basic-email{}
+  .modal-basic-location{}
+
+.modal-border-ul{
+  height: 20px;
+}
+  .modal-basic-border{ /* a ul/li sets in between basic and contact info */
+    border-bottom:1px solid silver;
+    width: 75%;
+    margin: auto;
+    padding-bottom: 10px;
+    list-style-type: none;
+  }
+.modal-contact-ul{
+  height: 120px;
+}
+[class*="modal-contact"]{
+    /*font-size: .8em;
     display: block;
-    width: 60%;
-    max-width: 400px;
-    padding: 80px 10px 80px 10px;
-    border-radius: 100%;
-    background-color: grey;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    color: grey;
+    height: 15px;
+    list-style-type: none;*/
 }
-.modal-name{
-  color: #000; /* black */
-
-}
-.modal-email{}
-.modal-location{}
-.modal-full-address{}
-.modal-cellnumber{}
-.modal-dob{}
+  .modal-contact-full-address{}
+  .modal-contact-cellnumber{}
+  .modal-contact-dob{}
 
 @media screen and (max-width: 860px){}
 @media screen and (max-width: 700px){}

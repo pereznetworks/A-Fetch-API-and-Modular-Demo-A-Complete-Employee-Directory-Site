@@ -121,7 +121,7 @@ var getData = (function(exports){
   const enabledModalWindow = function(employees){
 
     // selecting html elements for opening and closing modal window
-    const modal = document.getElementById('modal');
+    const modal = document.getElementById('modal-dimMainPage');
     const employeeBoxes = document.getElementsByClassName('col-4');
     const modalWindow = document.getElementById('modal-userBox');
     const closeModalWindow = document.getElementById('closeModalWindow');
