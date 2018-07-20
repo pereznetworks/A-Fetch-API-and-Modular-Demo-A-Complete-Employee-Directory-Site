@@ -22,17 +22,6 @@ var getData = (function(exports){
     }
   };
 
-  // handling http connection and other status errors
-  exports.checkStatus = function(response){
-    if (response.ok){  // if 'ok' then return response object and cont.
-      fetchSuccess = true;
-      return Promise.resolve(response);
-    } else {          // else return reject object with statusText
-      fetchSuccess = false;
-      return Promise.reject(new Error(response.statusText) );
-    }
-  }
-
   // wrapper function for actual fetch api calls
   exports.fetchDataFrom = function(url){
     return fetch(url)  // calling fetch() and returning the response ...
