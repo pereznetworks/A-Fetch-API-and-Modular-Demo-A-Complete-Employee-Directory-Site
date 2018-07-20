@@ -2,7 +2,6 @@
       Modal window, hover affect,
       toggle back and forth between employees when modal window open
       search/filter
-      promise.resolve and promise reject to keep promise fetch status from logging to console
   */
 
 // using module pattern for employee directory site
@@ -53,9 +52,11 @@ var getData = (function(exports){
 // module for html display and functionality for the employee directory
 !(function(getData){
 
+  // an array for the employee directory
   let employees = [];
 
-  // using fetch api calls with promise.all()
+  // managing fetch api calls with promise.all()
+    // User-Interface functionality enabled when data returned
   const getDirectory = function(url){
     return Promise.all([
       getData.fetchDataFrom(url)
@@ -65,8 +66,7 @@ var getData = (function(exports){
           employees = (getData.fetchResults[0].results);
           // getData.displayData(employees);
           makeEmployeeDirectory(employees);
-          // TODO: add a promise.resolve and promise.reject
-          // this should keep promise fetch status from loggin to console
+          enabledModalWindow(employees);
       });
   };
 
@@ -120,31 +120,59 @@ var getData = (function(exports){
     return employeeBasicInfoDiv;
   };
 
+  // add 1 div with basic info for each employee
   const makeEmployeeDirectory = function(employees){
     let employeeDirectory = document.getElementsByClassName('row')[0];
     employees.forEach(function(employee, index){
       employeeDirectory.appendChild(makeEmployeeDiv(employee));
       });
     };
-  // add 1 div with basic info for each employee
+
+  // setup eventlistener for each employee div, to open the modal window
+  const enabledModalWindow = function(employees){
+
+    // selecting html elements for opening and closing modal window
+    const modal = document.getElementById('modal');
+    const employeeBoxes = document.getElementsByClassName('col-4');
+    const modalWindow = document.getElementById('modal-userBox');
+    const closeModalWindow = document.getElementById('closeModalWindow');
+
+
+
+    // adding the eventlisteners for each employee div
+    for (let i = 0; i < employeeBoxes.length; i++){
+      employeeBoxes[i].addEventListener('click', function(e){
+        modal.style.display = 'block';
+        modalWindow.style.display = "block";
+      });
+    }
+
+    // eventlistener for close modal window
+    closeModalWindow.addEventListener('click', function(e){
+      modal.style.display = 'none';
+      modalWindow.style.display = "none";
+    });
+  }
 
   // wait until html page loads, then get 12 random users
   window.onload = function(e){
     let status = getDirectory('https://randomuser.me/api/?results=12');
   };
 
-  /* TODO: Modal window, hover affect, search/filter
-  // forEach employee, create an employee details info modal window
+  /* TODO:  hover affect, search/filter
 
-  // when employee basic info is moused-over
-    // activate 'hover' style
+    // added Modal Window,
+    // eventlistener for each employee box
+    // can open with click on each employee box
+    // and a close button to close the modal window
 
-  // when employee basic info div is clicked on
-    // display modal windows with that employee's detials info div
-    // with modal Window open, toogle between employees
-    // when modal window closed return to employee directory
+    // TODO: add employee detail info
+    // TODO: add prev and next functionality to view employee detail info
 
-  // search function: filter employee by any of the basic or details info
+    // when employee basic info is moused-over
+      // activate 'hover' style
+
+    // search function: filter employee by any of the basic or details info
   */
 
 

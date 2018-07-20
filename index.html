@@ -4,11 +4,27 @@
   <title>Employee Directory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/modalStyles.css">
   <script src="js/app.js"></script>
 </head>
   <body>
-    <div class="row">
+    <div class="row" id='row'>
       <h2 class="directoryTitle">Awesome Startup Employee Directory</h2>
+    </div>
+    <div id="modal">
+      
+    </div>
+    <div id="modal-userBox">
+      <button type="button" name="close" id='closeModalWindow'>&times;</button>
+      <ul class="modal-ul">
+        <li class='modal-img' id='avatarId'><img class='avatarImg'></li>
+        <li class='modal-name'>First, Last Name</li>
+        <li class='modal-email'>alias@email.net</li>
+        <li class='modal-location'>City, State</li>
+        <li class='modal-full-address'>999 Street, Apt 001, City, State, USA 90210</li>
+        <li class='modal-cellnumber'>222-999-0001</li>
+        <li class='modal-dob'>Jan. 1st, 1991</li>
+      </ul>
     </div>
   </body>
 </html>

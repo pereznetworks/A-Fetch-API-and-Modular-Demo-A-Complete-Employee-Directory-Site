@@ -1,0 +1,84 @@
+
+* {
+    box-sizing: border-box;
+}
+
+#modal{
+  /* dim when modal window enabled */
+  display: none;  /* hidden initially */
+  left 0;
+  top: 0;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  height: 100%;
+  width: 100%;*
+  margin: auto;
+  padding: 0;
+  background-color: rgba(192, 192, 192, .5);
+}
+
+#modal-userBox{  /* the modal window itself*/
+  display: none;  /* hidden initially */
+  margin: 10% 35% 10% 35%; /* places content in roughly center of window */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  /* padding-top: 100px;  Location of the box */
+  left: 0;
+  top: 0;
+  width: 300px; /*  width */
+  height: 300px; /* height */
+  overflow: auto; /* Enable scroll if needed */
+  border-radius: 5%;
+  /* background-color: rgb(255, 255, 255); Fallback color */
+  background-color: rgba(255, 255, 255,1); /* White, Solid */
+}
+
+.modal-ul{
+  padding: 1px;
+}
+#closeModalWindow{  /* styling the modal window close button */
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #424242bd;
+  font-size: 25px;
+  font-weight:100;
+  transition: 0.3s;
+  border-style: none;
+}
+
+/* basic class for styling detail info with-in modal window */
+[class*="modal-"]{
+    font-size: .8em;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    color: grey;
+    height: 15px;
+    list-style-type: none;
+}
+
+/* picture of employee with-in modal window  */
+.modal-img {
+    margin: 10px 60px;
+    display: block;
+    width: 60%;
+    max-width: 400px;
+    padding: 80px 10px 80px 10px;
+    border-radius: 100%;
+    background-color: grey;
+}
+.modal-name{
+  color: #000; /* black */
+
+}
+.modal-email{}
+.modal-location{}
+.modal-full-address{}
+.modal-cellnumber{}
+.modal-dob{}
+
+@media screen and (max-width: 860px){}
+@media screen and (max-width: 700px){}
+@media screen and (max-width: 480px){}
