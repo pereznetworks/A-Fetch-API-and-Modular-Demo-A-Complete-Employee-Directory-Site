@@ -14,8 +14,13 @@
 
     up next: Modal window, hover affect,
 
-      Sample layout for modal window complete
-        now have to add employee detail info and re-tweek layout
+      v1 of modal window complete
+        RWD layout, with selected employee info, looks great!
+        need to
+          parse DOB (it's an object with a date integer),
+        already working on
+          function to parse Location (location(street address string)
+
 
     up next: toggle back and forth between employees when modal window open
 
