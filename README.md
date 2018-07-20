@@ -14,6 +14,9 @@
 
     up next: Modal window, hover affect,
 
+      Sample layout for modal window complete
+        now have to add employee detail info and re-tweek layout
+
     up next: toggle back and forth between employees when modal window open
 
     up next: search/filter
@@ -105,8 +108,10 @@
               Complete for
                 User directory.
 
+              Sample layout for modal window complete
+                now have to add employee detail info and re-tweek layout
               Up next for ....
-                Model pop-up.
+
                 Add a hover state to the employee items
 
 # PHASE 3: Extra Credit Features
