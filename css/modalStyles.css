@@ -38,7 +38,7 @@
   width: 260px; /*  width */
   height: 300px; /* height */
   overflow: auto; /* Enable scroll if needed */
-  border-radius: 5%;
+  border-radius: 2%;
   /* background-color: rgb(255, 255, 255); Fallback color */
   background-color: rgba(255, 255, 255,1); /* White, Solid */
 }
@@ -72,6 +72,7 @@
     color: #000; /* black */
     font-size: 1em;
     font-weight: bold;
+    font-style: oblique;
 
   }
   .modal-basic-email{}
@@ -88,7 +89,7 @@
     list-style-type: none;
   }
 .modal-contact-ul{
-  height: 120px;
+  height: 70px;
 }
 [class*="modal-contact"]{
     /*font-size: .8em;
