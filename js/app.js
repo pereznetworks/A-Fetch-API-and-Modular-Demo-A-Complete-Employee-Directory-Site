@@ -114,6 +114,76 @@ var getData = (function(exports){
     return employeeBasicInfoDiv;
   };
 
+  // TODO: function to parse street address, cap'ing first letter of each proper name
+  const parseStreetAddress = function(addressStr){
+          // set up some variables
+          let numOfSpaces = 0;
+          let indexOfSpaces = [];
+          let address = addressStr;
+          let startI = 0;
+          let endI = 0;
+          let wordBeingParsed = false
+          let parsedWord = '';
+          let numBeingParsed = false;
+          let addressNumParsed = 0;
+          let addressNumStr = '';
+
+          // array, a counter and function to create an array..
+          // of the different parts of the street address
+          // after each part is parsed...
+          const streetAddressArray = [];
+
+          const makeStreetAddressArray = function(parsedWord){
+            parsedWord = parsedWord + ' ';
+            streetAddressArray.push(parsedWord);
+          };
+
+          // using a space as a delimiter
+          // separate numbers from words
+          // capitalize the first letter of each word
+          // create an array each part of strreet address, numbers and words
+          // keeping order of each part
+          for (let i = 0; i < address.length; i++ ) {
+
+            if (!isNaN(parseInt(address[i]))) {
+              addressNumStr += address[i].toString();
+              numBeingParsed = true;
+              wordBeingParsed = false
+            } else if (address[i] === ' ' && wordBeingParsed) {
+              endI = i;
+              parsedWord = address.slice(startI, endI);
+              parsedWord = capFirstLtrOf(parsedWord);
+              makeStreetAddressArray(parsedWord);
+              wordBeingParsed = false;
+            } else if ( address[i] === ' ' && numBeingParsed){
+              makeStreetAddressArray(addressNumStr)
+              addressNumStr = '';
+              numBeingParsed = false;
+              wordBeingParsed = true;
+              startI = i + 1;
+           } else if (address[i] === ' ' && !numBeingParsed && !wordBeingParsed ) {
+             wordBeingParsed = true;
+             startI = i + 1;
+           } else if (i == (address.length - 1) && endI < startI){
+             parsedWord = address.slice(startI);
+             parsedWord = capFirstLtrOf(parsedWord);
+             makeStreetAddressArray(parsedWord)
+           } else if (i == (address.length - 1) && endI > 0 ){
+             parsedWord = address.slice(endI + 1);
+             parsedWord = capFirstLtrOf(parsedWord);
+             makeStreetAddressArray(parsedWord)
+           }
+
+          }
+
+         // piece parsed street address parts back together in original order
+         let parsedStreetAddress = '';
+         streetAddressArray.forEach( function(item, index){
+            parsedStreetAddress += item;
+         });
+         return parsedStreetAddress;
+  };
+
   // add 1 div with basic info for each employee
   const makeEmployeeDirectory = function(employees){
     let employeeDirectory = document.getElementsByClassName('row')[0];
@@ -149,7 +219,9 @@ var getData = (function(exports){
         employeeName.textContent = combineProNoun(employees[i].name.first, ' ', employees[i].name.last);
         employeeEmail.textContent = employees[i].email;
         employeeLocation.textContent = capFirstLtrOf(employees[i].location.city);
-        employeeFullAddress.textContent = `${employees[i].location.street}, ${employees[i].location.city}, ${employees[i].location.state}, ${employees[i].location.postcode}`;
+        parsedStreetAddress = parseStreetAddress(employees[i].location.street);
+        console.log(parsedStreetAddress);
+        employeeFullAddress.textContent = `${employees[i].location.street}, ` + capFirstLtrOf(employees[i].location.city) + `, ` + capFirstLtrOf(employees[i].location.state)  + `, ` + `${employees[i].location.postcode}`;
         employeeCellNumber.textContent = employees[i].phone;
         employeeDOB.textContent = employees[i].dob;
       });
@@ -185,70 +257,3 @@ var getData = (function(exports){
 
 
 }(getData));  // end displayDirectory module
-
-// TODO: function to parse street address, cap'ing first letter of each proper name
-const parseStreetAddress = function(addressStr){
-        var address = addressStr;
-        var startI = 0;
-        var endI = 0;
-        var streetNameParsed = 0;
-        var streetNumsParsed = 0;
-        var addressNumParsed = false;
-        var aptNumParsed = false
-        var addressNum = '';
-        var aptNum = '';
-        var addressStreet1 = '';
-        var addressStreet2 = '';
-        var addressStreet3 = '';
-
-        const isStreetNumParsed = function(streetNumsParsed){
-          if (streetNumsParsed < 0){
-            return true;
-          }
-        }
-
-        for (let i = 0; i < address.length; i++ ) {
-
-           var tempNum = parseInt(address[i]);
-           if (tempNum !== 'NaN' && !addressNumParsed){
-             addressNum += tempNum.toString();
-             streetNumsParsed += .1;
-           } else if (tempNum !== 'NaN' && streetNameParsed <= 2 && streetNumsParsed !== 0){
-             aptNum += tempNum.toString();
-
-           } else if (address[i] === ' ' && streetNameParsed == 2.5){
-             endI = address[i];
-             var addressStreet3 = address.slice(startI, endI);
-             streetNameParsed = 3;
-            addressNumParsed = isStreetNumParsed(streetNameParsed);
-
-           } else if (address[i] === ' ' && streetNameParsed == 2){
-             startI = address[i];
-             streetNameParsed = 2.5;
-
-           } else if (address[i] === ' ' && streetNameParsed == 1.5){
-             endI = address[i];
-             var addressStreet2 = address.slice(startI, endI);
-             streetNameParsed = 2;
-             addressNumParsed = isStreetNumParsed(streetNameParsed);
-
-           } else if (address[i] === ' ' && streetNameParsed == 1){
-             startI = address[i];
-             streetNameParsed = 1.5;
-
-           } else if (address[i] === ' ' && streetNameParsed == 0.5){
-             endI = address[i];
-             var addressStreet1 = address.slice(startI, endI);
-             streetNameParsed = 1;
-            addressNumParsed = isStreetNumParsed(streetNameParsed);
-
-           } else if (address[i] === ' ' && streetNameParsed == 0){
-             startI = address[i + 1];
-             streetNameParsed = 0.5;
-             addressNumParsed = isStreetNumParsed(streetNameParsed);
-           }
-       }
-
-       var parsedStreetAddress = ''; // TODO: have to piece parts back together in original order
-       return parsedStreetAddress;
-};
