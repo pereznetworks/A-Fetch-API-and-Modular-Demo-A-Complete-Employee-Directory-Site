@@ -82,6 +82,9 @@ body{
   margin: 1px 1px 1px 1px;
   padding: 1px 1px 1px 1px;
 }
+.location{
+  text-transform: capitalize;
+}
 .avatarImg{
   display:block;
   width: 30%;
@@ -97,6 +100,7 @@ body{
   font-size: 1em;
   font-style: oblique;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 @media screen and (max-width: 860px){

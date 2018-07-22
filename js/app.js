@@ -58,23 +58,7 @@ var getData = (function(exports){
       });
   };
 
-  const capFirstLtrOf = function(word){
-    let firstLetter = word[0];
-    firstLetter = firstLetter.toUpperCase();
-    let restOf = word.slice(1, word.length);
-    let Word = firstLetter + restOf;
-    return Word;
-  };
-
   const combineProNoun = function(firstWord, space, secondWord){
-    firstWord = capFirstLtrOf(firstWord);
-    secondWord = capFirstLtrOf(secondWord);
-    return firstWord.concat(space, secondWord);
-  };
-
-  const combineLocation = function(employeeLocation){
-    employeeLocation.number = capFirstLtrOf(firstWord);
-    secondWord = capFirstLtrOf(secondWord);
     return firstWord.concat(space, secondWord);
   };
 
@@ -104,7 +88,7 @@ var getData = (function(exports){
     employeeImg.src = employee.picture.large;
     employeeFNameLName.textContent = combineProNoun(employee.name.first, ' ', employee.name.last);
     employeeEMail.textContent = employee.email;
-    employeeLocation.textContent = capFirstLtrOf(employee.location.city);
+    employeeLocation.textContent = employee.location.city;
     employeeBasicInfoUl.appendChild(employeeFNameLName);
     employeeBasicInfoUl.appendChild(employeeEMail);
     employeeBasicInfoUl.appendChild(employeeLocation);
@@ -114,75 +98,6 @@ var getData = (function(exports){
     return employeeBasicInfoDiv;
   };
 
-  // TODO: function to parse street address, cap'ing first letter of each proper name
-  const parseStreetAddress = function(addressStr){
-          // set up some variables
-          let numOfSpaces = 0;
-          let indexOfSpaces = [];
-          let address = addressStr;
-          let startI = 0;
-          let endI = 0;
-          let wordBeingParsed = false
-          let parsedWord = '';
-          let numBeingParsed = false;
-          let addressNumParsed = 0;
-          let addressNumStr = '';
-
-          // array, a counter and function to create an array..
-          // of the different parts of the street address
-          // after each part is parsed...
-          const streetAddressArray = [];
-
-          const makeStreetAddressArray = function(parsedWord){
-            parsedWord = parsedWord + ' ';
-            streetAddressArray.push(parsedWord);
-          };
-
-          // using a space as a delimiter
-          // separate numbers from words
-          // capitalize the first letter of each word
-          // create an array each part of strreet address, numbers and words
-          // keeping order of each part
-          for (let i = 0; i < address.length; i++ ) {
-
-            if (!isNaN(parseInt(address[i]))) {
-              addressNumStr += address[i].toString();
-              numBeingParsed = true;
-              wordBeingParsed = false
-            } else if (address[i] === ' ' && wordBeingParsed) {
-              endI = i;
-              parsedWord = address.slice(startI, endI);
-              parsedWord = capFirstLtrOf(parsedWord);
-              makeStreetAddressArray(parsedWord);
-              wordBeingParsed = false;
-            } else if ( address[i] === ' ' && numBeingParsed){
-              makeStreetAddressArray(addressNumStr)
-              addressNumStr = '';
-              numBeingParsed = false;
-              wordBeingParsed = true;
-              startI = i + 1;
-           } else if (address[i] === ' ' && !numBeingParsed && !wordBeingParsed ) {
-             wordBeingParsed = true;
-             startI = i + 1;
-           } else if (i == (address.length - 1) && endI < startI){
-             parsedWord = address.slice(startI);
-             parsedWord = capFirstLtrOf(parsedWord);
-             makeStreetAddressArray(parsedWord)
-           } else if (i == (address.length - 1) && endI > 0 ){
-             parsedWord = address.slice(endI + 1);
-             parsedWord = capFirstLtrOf(parsedWord);
-             makeStreetAddressArray(parsedWord)
-           }
-
-          }
-
-         // piece parsed street address parts back together in original order
-         let parsedStreetAddress = '';
-         streetAddressArray.forEach( function(item, index){
-            parsedStreetAddress += item;
-         });
-         return parsedStreetAddress;
-  };
 
   // add 1 div with basic info for each employee
   const makeEmployeeDirectory = function(employees){
@@ -204,7 +119,8 @@ var getData = (function(exports){
     const employeeName = document.getElementById('name');
     const employeeEmail = document.getElementById('email');
     const employeeLocation = document.getElementById('location');
-    const employeeFullAddress = document.getElementById('full-address');
+    const employeeStreetAddress = document.getElementById('streetAddress');
+    const employeeCityStateZip = document.getElementById('cityStateZip');
     const employeeCellNumber = document.getElementById('phone');
     const employeeDOB = document.getElementById('dob');
 
@@ -218,10 +134,9 @@ var getData = (function(exports){
         employeeImg.src = employees[i].picture.large;
         employeeName.textContent = combineProNoun(employees[i].name.first, ' ', employees[i].name.last);
         employeeEmail.textContent = employees[i].email;
-        employeeLocation.textContent = capFirstLtrOf(employees[i].location.city);
-        parsedStreetAddress = parseStreetAddress(employees[i].location.street);
-        console.log(parsedStreetAddress);
-        employeeFullAddress.textContent = `${employees[i].location.street}, ` + capFirstLtrOf(employees[i].location.city) + `, ` + capFirstLtrOf(employees[i].location.state)  + `, ` + `${employees[i].location.postcode}`;
+        employeeLocation.textContent = employees[i].location.city;
+        employeeStreetAddress.textContent = employees[i].location.street;
+        employeeCityStateZip.textContent = employees[i].location.city + `, ` + employees[i].location.state  + `, ` + employees[i].location.postcode;
         employeeCellNumber.textContent = employees[i].phone;
         employeeDOB.textContent = employees[i].dob;
       });
@@ -236,7 +151,7 @@ var getData = (function(exports){
 
   // wait until html page loads, then get 12 random users
   window.onload = function(e){
-    let status = getDirectory('https://randomuser.me/api/?results=12');
+    let status = getDirectory('https://randomuser.me/api/?results=12&nat=au,br,ca,ch,de,dk,es,fi,fr,gb,ie,no,nl,nz,us');
   };
 
   /* TODO:  hover affect, search/filter

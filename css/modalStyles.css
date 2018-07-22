@@ -43,6 +43,9 @@
   background-color: rgba(255, 255, 255,1); /* White, Solid */
 }
 
+.capitalize{
+  text-transform: capitalize;
+}
 /* basic class for styling detail info with-in modal window */
 [class*="modal"]{
     font-size: .8em;
@@ -53,7 +56,7 @@
     color: grey;
     list-style-type: none;
     padding: 0;
-    height: 20px;
+    height: auto;
 }
 .modal-basic-ul{
   height: 160px;
@@ -73,10 +76,13 @@
     font-size: 1em;
     font-weight: bold;
     font-style: oblique;
+    text-transform: capitalize;
 
   }
   .modal-basic-email{}
-  .modal-basic-location{}
+  .modal-basic-location{
+    text-transform: capitalize;
+  }
 
 .modal-border-ul{
   height: 20px;
@@ -101,7 +107,11 @@
     height: 15px;
     list-style-type: none;*/
 }
-  .modal-contact-full-address{}
+  .modal-contact-address{
+    text-transform: capitalize;
+    width: 80%;
+    margin: 5px auto;
+  }
   .modal-contact-cellnumber{}
   .modal-contact-dob{}
 

@@ -2,7 +2,13 @@
 
 # TODO: STATUS OF PROJECT
 
+      TODO: parse DOB (it's an object with a date integer),
+
     completed so far:
+
+    modal window
+      RWD layout, with selected employee info, looks great!
+      ALL appropriate capitalized!
 
       using module pattern
       able to get 12 random employees
@@ -12,15 +18,7 @@
       adjusted media-queries for RWD
         all basic info and images appear "as designed" for all screen sizes
 
-    up next: Modal window, hover affect,
-
-      v1 of modal window complete
-        RWD layout, with selected employee info, looks great!
-        need to
-          parse DOB (it's an object with a date integer),
-        already working on
-          function to parse Location (location(street address string)
-
+    up next: hover affect,
 
     up next: toggle back and forth between employees when modal window open
 
