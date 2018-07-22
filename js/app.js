@@ -62,6 +62,15 @@ var getData = (function(exports){
     return firstWord.concat(space, secondWord);
   };
 
+  const getDOB = function(employeeDOB){
+    rawDob = new Date(employeeDOB);
+    const dayofMonth = rawDob.getDate();
+    const month = rawDob.getMonth() + 1;
+    const fullYear = rawDob.getFullYear();
+    const parsedDob = `${month}/${dayofMonth}/${fullYear}`;
+    return parsedDob;
+  };
+
   // create a div, insert employee's basic info
   const makeEmployeeDiv = function(employee){
 
@@ -97,7 +106,6 @@ var getData = (function(exports){
 
     return employeeBasicInfoDiv;
   };
-
 
   // add 1 div with basic info for each employee
   const makeEmployeeDirectory = function(employees){
@@ -138,7 +146,7 @@ var getData = (function(exports){
         employeeStreetAddress.textContent = employees[i].location.street;
         employeeCityStateZip.textContent = employees[i].location.city + `, ` + employees[i].location.state  + `, ` + employees[i].location.postcode;
         employeeCellNumber.textContent = employees[i].phone;
-        employeeDOB.textContent = employees[i].dob;
+        employeeDOB.textContent = getDOB(employees[i].dob.date);
       });
     }
 
