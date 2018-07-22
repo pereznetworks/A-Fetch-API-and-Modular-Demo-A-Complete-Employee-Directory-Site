@@ -58,10 +58,12 @@ var getData = (function(exports){
       });
   };
 
+  // combine first and last name objects values into 1 string
   const combineProNoun = function(firstWord, space, secondWord){
     return firstWord.concat(space, secondWord);
   };
 
+  // parsed date of birth into format, MM/DD/YYY. like, 01/11/1990
   const getDOB = function(employeeDOB){
     rawDob = new Date(employeeDOB);
     const dayofMonth = rawDob.getDate();
@@ -113,6 +115,15 @@ var getData = (function(exports){
     employees.forEach(function(employee, index){
       employeeDirectory.appendChild(makeEmployeeDiv(employee));
       });
+
+    document.querySelectorAll('.col-4').forEach(function(item, index){
+      item.addEventListener('mouseover', function(e){
+        item.style.boxShadow = '5px 5px grey';
+      });
+      item.addEventListener('mouseout', function(e){
+        item.style.boxShadow = '';
+      });
+    });
     };
 
   // setup eventlistener for each employee div, to open the modal window
