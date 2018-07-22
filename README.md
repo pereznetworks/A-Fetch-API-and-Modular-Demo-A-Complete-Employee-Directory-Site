@@ -4,6 +4,9 @@
 
     completed so far:
 
+    RWD layout for main directory
+    may do media query styling for modal window also
+
       using module pattern
       able to get 12 random employees
       able to extract basic info for each
@@ -115,7 +118,7 @@
 
                 add a hover state to the employee items
 
-# PHASE 3: Extra Credit Features: NEXT UP 
+# PHASE 3: Extra Credit Features: NEXT UP
 
     To get an "exceeds" rating,
     you can expand on the project in the following ways:
