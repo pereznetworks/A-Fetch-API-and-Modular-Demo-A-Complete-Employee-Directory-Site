@@ -82,12 +82,18 @@ button:active{
   background-color: white;
 }
 
-.userBox:active, .userBox:hover {
+.userBox:hover {
   box-shadow:5px 5px black;
   background-color:grey;
   border-color:black;
 }
 
+.userBox:active{
+  transform: translateY(1px);
+  box-shadow:1px 1px black;
+  background-color:grey;
+  border-color:black;
+}
 .row::after {
     content: "";
     clear: both;
