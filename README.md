@@ -2,13 +2,7 @@
 
 # TODO: STATUS OF PROJECT
 
-      TODO: parse DOB (it's an object with a date integer),
-
     completed so far:
-
-    modal window
-      RWD layout, with selected employee info, looks great!
-      ALL appropriate capitalized!
 
       using module pattern
       able to get 12 random employees
@@ -18,17 +12,20 @@
       adjusted media-queries for RWD
         all basic info and images appear "as designed" for all screen sizes
 
-    up next: hover affect,
+      modal window
+        RWD layout, with selected employee info, looks great!
+        ALL appropriate capitalized!
+        DOB date parsed and displayed in mm/dd/yyyy format
+
+     hover affect,
+       black border and right, bottom shading with grey background
+       looks cool, since font is silver and black
 
     up next: toggle back and forth between employees when modal window open
 
     up next: search/filter
 
-    fix bug: some city names are more than 1 word
-      need to capitalize first letter of each word of multiple-word city name
-
-    fix bug: promise.resolve and promise reject
-     to keep promise from logging fetch status to console
+    no bugs remaining
 
 # PHASE 1: Project Prep: COMPLETE
 
@@ -67,7 +64,7 @@
           able to store the 12 random users in a "employee" array
           reloading page fetch 12 completely different random persons
 
-# PHASE 2: Required Features and Functionality
+# PHASE 2: Required Features and Functionality : COMPLETE
 
   To complete this project, follow the instructions below.
   If you get stuck, ask a question in the community.
@@ -86,38 +83,39 @@
 
   Required Feature 2:
 
-        UP NEXT: Create a modal window
+        Modal window
 
             When any part of an employee item in the directory is clicked,
             a modal window should pop up with the following details displayed:
-            Image
-            Name
-            Email
-            City or location
-            Cell Number
-            Detailed Address,
-            including street name and number, state or country, and post code.
-            Birthday
+              Image
+              Name
+              Email
+              City or location
+              Cell Number
+              Detailed Address,
+                including street name and number,
+                state or country, and post code.
+              Birthday
+
             Make sure there’s a way to close the modal window
 
   Required Feature 3:
 
-        50%: Structure and style
+         Structure and style
 
             The user directory and modal pop up window
             should roughly match the provided mockups.
              Display the users in a grid or table layout
 
               Complete for
+
                 User directory.
 
-              Sample layout for modal window complete
-                now have to add employee detail info and re-tweek layout
-              Up next for ....
+                layout for modal window complete
 
-                Add a hover state to the employee items
+                add a hover state to the employee items
 
-# PHASE 3: Extra Credit Features
+# PHASE 3: Extra Credit Features: NEXT UP 
 
     To get an "exceeds" rating,
     you can expand on the project in the following ways:
