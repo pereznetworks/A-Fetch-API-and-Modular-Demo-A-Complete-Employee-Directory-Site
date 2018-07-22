@@ -74,12 +74,13 @@ var getData = (function(exports){
   };
 
   // create a div, insert employee's basic info
-  const makeEmployeeDiv = function(employee){
+  const makeEmployeeDiv = function(employee, index){
 
     const directory = document.createElement('div');
 
     const employeeBasicInfoDiv = document.createElement('div');
     employeeBasicInfoDiv.className = 'col-4 userBox';
+    employeeBasicInfoDiv.id = `userBox-${index}`
 
     const employeeImg = document.createElement('img');
     employeeImg.className = 'avatarImg';
@@ -113,21 +114,19 @@ var getData = (function(exports){
   const makeEmployeeDirectory = function(employees){
     let employeeDirectory = document.getElementsByClassName('row')[0];
     employees.forEach(function(employee, index){
-      employeeDirectory.appendChild(makeEmployeeDiv(employee));
+      employeeDirectory.appendChild(makeEmployeeDiv(employee, index));
       });
 
-    document.querySelectorAll('.col-4').forEach(function(item, index){
-      item.addEventListener('mouseover', function(e){
-        item.style.boxShadow = '5px 5px black';
-        item.style.backgroundColor = 'grey';
-        item.style.borderColor = 'black';
-      });
-      item.addEventListener('mouseout', function(e){
-        item.style.boxShadow = '';
-        item.style.backgroundColor = '';
-        item.style.borderColor = '';
-      });
-    });
+    // controls to toggle back and forth between employees  
+    // document.querySelectorAll('nextEmployee').forEach(function(item, index){
+    //   item.addEventListener('click', function(e){
+    //     show next employee
+    //   });
+    // document.querySelectorAll('prevEmployee').forEach(function(item, index){
+    //   item.addEventListener('click', function(e){
+    //     show next employee
+    //   });
+
     };
 
   // setup eventlistener for each employee div, to open the modal window

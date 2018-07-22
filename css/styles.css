@@ -7,12 +7,53 @@ body{
   margin: auto;
   background-color: black;
   align-content: center;
-  margin: auto
-  padding: 1%;
+  margin: auto;
 }
-.header {
-    border: 1px solid red;
-    padding: 15px;
+.header{
+  background-color: white;
+  width: 95%;
+  margin: auto;
+  padding: 1% 1% 1% 4%;
+  margin-top: 1%;
+}
+
+.header h2{
+  font-style: normal;
+  font-size: 1.6em;
+  color:grey;
+  font-weight:400;
+}
+
+.header input{
+  margin-left: 40%;
+}
+.header button {
+  margin-right: 2%;
+}
+
+
+button:hover {
+  outline:none;
+  box-shadow:5px 5px black;
+  background-color:grey;
+  border-color:black;
+}
+
+button:active{
+  outline:none;
+  transform: translateY(2px);
+  box-shadow:1px 1px black;
+  background-color:grey;
+  border-color:black;
+}
+
+input:active,input:hover  {
+  outline:none;
+  background-color: grey;
+  color: white;
+}
+input:active::placeholder,input:hover::placeholder{
+  color: white;
 }
 .row {
   width: 95%;
@@ -22,12 +63,18 @@ body{
   align-content: center;
 }
 .row::before{
-  margin: 1%;
   content: "";
   clear: both;
   display: table;
-  background-color: black;
+  background-color: white;
 }
+
+.userBox:active, .userBox:hover {
+  box-shadow:5px 5px black;
+  background-color:grey;
+  border-color:black;
+}
+
 .row::after {
     content: "";
     clear: both;
@@ -55,19 +102,12 @@ body{
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-.directoryTitle{
-  font-style: normal;
-  font-size: 1.6em;
-  color:grey;
-  font-weight:400;
-}
 .userBox{
     color: silver;
     border: 1px solid #eaeaea;
     border-radius: 2%;
     background-color: white;
     align-content: center;
-
   }
 
 .userBox ul{
