@@ -103,6 +103,10 @@ body{
   text-transform: capitalize;
 }
 
+.userBox .email, .userBox .location{
+  font-size: .8em;
+}
+
 @media screen and (max-width: 860px){
   .col-4 {width: 40%;}
   .userBox{
