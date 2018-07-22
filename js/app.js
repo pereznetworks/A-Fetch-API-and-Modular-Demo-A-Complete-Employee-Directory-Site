@@ -118,10 +118,14 @@ var getData = (function(exports){
 
     document.querySelectorAll('.col-4').forEach(function(item, index){
       item.addEventListener('mouseover', function(e){
-        item.style.boxShadow = '5px 5px grey';
+        item.style.boxShadow = '5px 5px black';
+        item.style.backgroundColor = 'grey';
+        item.style.borderColor = 'black';
       });
       item.addEventListener('mouseout', function(e){
         item.style.boxShadow = '';
+        item.style.backgroundColor = '';
+        item.style.borderColor = '';
       });
     });
     };
