@@ -24,35 +24,48 @@ body{
   font-weight:400;
 }
 
-.header input{
-  margin-left: 40%;
-}
-.header button {
+button{
   margin-right: 2%;
+  border-radius: 5%;
 }
 
+button:focus{outline:none;}
 
 button:hover {
   outline:none;
   box-shadow:5px 5px black;
   background-color:grey;
   border-color:black;
+  border-radius: 10%;
 }
 
 button:active{
   outline:none;
-  transform: translateY(2px);
+  transform: translateY(1px);
   box-shadow:1px 1px black;
   background-color:grey;
   border-color:black;
+  border-radius: 10%;
 }
 
-input:active,input:hover  {
+.header input {
+  margin-left: 40%;
+  border-radius: 5%;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 7px 2px;
+}
+.header input:focus{outline:none;}
+
+.header input:active,input:hover  {
   outline:none;
   background-color: grey;
   color: white;
+  border-radius: 5%;
+  border-color: black;
 }
-input:active::placeholder,input:hover::placeholder{
+.header input:active::placeholder,input:hover::placeholder{
   color: white;
 }
 .row {
