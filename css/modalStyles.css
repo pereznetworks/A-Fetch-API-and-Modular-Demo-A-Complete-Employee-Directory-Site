@@ -2,6 +2,32 @@
 * {
     box-sizing: border-box;
 }
+/* basic class for styling detail info with-in modal window */
+[class*="modal"]{
+    display: block;
+    margin:auto;
+    padding: 0;
+    font-size: .8em;
+    color: grey;
+    text-align: center;
+    align-content: center;
+    list-style-type: none;
+}
+#modal-userBox{  /* the modal window itself*/
+  display: none;  /* hidden initially */
+  margin: auto; /* places content in roughly center of window */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  /* padding-top: 100px;  Location of the box */
+  left: 0;
+  top: 0;
+  width: 260px; /*  width */
+  height: 340px; /* height */
+  overflow: auto; /* Enable scroll if needed */
+  border-radius: 2%;
+  /* background-color: rgb(255, 255, 255); Fallback color */
+  background-color: rgba(255, 255, 255,1); /* White, Solid */
+}
 
 #modal-dimMainPage{
   /* dim when modal window enabled */
@@ -18,8 +44,8 @@
 }
 #closeModalWindow{  /* styling the modal window close button */
   position: absolute;
-  top: 5px;
-  right: 115px;
+  top: 1.5%;
+  right: 40%;
   color: #424242bd;
   font-size: 15px;
   font-weight:100;
@@ -29,8 +55,8 @@
 }
 #prevModalWindow{  /* styling the modal window prev button */
   position: absolute;
-  top: 5px;
-  right: 205px;
+  top: 1.5%;
+  right: 78%;
   color: #424242bd;
   font-size: 15px;
   font-weight:100;
@@ -40,8 +66,8 @@
 }
 #nextModalWindow{ /* styling the modal window next button */
   position: absolute;
-  top: 5px;
-  right: 20px;
+  top: 1.5%;
+  right: 8%;
   color: #424242bd;
   font-size: 15px;
   font-weight:100;
@@ -50,44 +76,18 @@
   border-radius: 5%;
 }
 
-#modal-userBox{  /* the modal window itself*/
-  display: none;  /* hidden initially */
-  margin: 10% 35% 10% 35%; /* places content in roughly center of window */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  /* padding-top: 100px;  Location of the box */
-  left: 0;
-  top: 0;
-  width: 260px; /*  width */
-  height: 340px; /* height */
-  overflow: auto; /* Enable scroll if needed */
-  border-radius: 2%;
-  /* background-color: rgb(255, 255, 255); Fallback color */
-  background-color: rgba(255, 255, 255,1); /* White, Solid */
-}
-
 .capitalize{
   text-transform: capitalize;
 }
-/* basic class for styling detail info with-in modal window */
-[class*="modal"]{
-    font-size: .8em;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-    color: grey;
-    list-style-type: none;
-    padding: 0;
-    height: auto;
-}
 .modal-basic-ul{
   height: 160px;
+  margin:5%;
   padding: 10px 0;
 }
 .modal-border-ul-top{
   top: 8px;
-  height: 0;
+  height: 7%;
+  margin-top: 10%;
 }
   .modal-basic-border-top{ /* a ul/li sets in between basic and contact info */
     border-bottom:1px solid silver;
@@ -97,7 +97,7 @@
     list-style-type: none;
   }
   .modal-basic-img {
-      margin: 10px auto;
+      margin: auto;
       display: block;
       width: 40%;
       height: 40%;
@@ -111,6 +111,7 @@
     font-weight: bold;
     font-style: oblique;
     text-transform: capitalize;
+    margin-top: 5%;
 
   }
   .modal-basic-email{}
@@ -119,6 +120,7 @@
   }
 
 .modal-border-ul{
+  margin: auto;
   height: 20px;
 }
   .modal-basic-border{ /* a ul/li sets in between basic and contact info */
@@ -130,6 +132,7 @@
   }
 .modal-contact-ul{
   height: 70px;
+  margin-top: 5%;
 }
 [class*="modal-contact"]{
     /*font-size: .8em;
@@ -151,4 +154,10 @@
 
 @media screen and (max-width: 860px){}
 @media screen and (max-width: 700px){}
-@media screen and (max-width: 480px){}
+@media screen and (max-width: 480px){
+  #modal-userBox{
+    margin:10% auto;
+    width:300px;
+    height:450px;
+  }
+}
