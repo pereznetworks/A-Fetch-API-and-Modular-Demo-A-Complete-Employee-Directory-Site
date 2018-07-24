@@ -35,39 +35,16 @@ var getData = (function(exports){
 
 }(getData || { } ));  // end getDirectory module
 
-// module for search and for displaying search results..
-var searchData = (function(exports){
-    //methods hear
-}(searchData || { } ));
-
-// module for html display and functionality for the employee directory
-!(function(getData){
-
-  // an array for the employee directory
-  let employees = [];
-
-  // managing fetch api calls with promise.all()
-    // User-Interface functionality enabled when data returned
-  const getDirectory = function(url){
-    return Promise.all([
-      getData.fetchDataFrom(url)
-    ]).then(data => {
-          getData.fetchResults = data;
-          // getData.displayData(getData.fetchResults);
-          employees = (getData.fetchResults[0].results);
-          // getData.displayData(employees);
-          makeEmployeeDirectory(employees);
-          enabledModalWindow(employees);
-      });
-  };
+// module for displaying data as html employee directory
+var displayData = (function(exports){
 
   // combine first and last name objects values into 1 string
-  const combineProNoun = function(firstWord, space, secondWord){
+  exports.combineProNoun = function(firstWord, space, secondWord){
     return firstWord.concat(space, secondWord);
   };
 
   // parsed date of birth into format, MM/DD/YYY. like, 01/11/1990
-  const getDOB = function(employeeDOB){
+  exports.getDOB = function(employeeDOB){
     rawDob = new Date(employeeDOB);
     const dayofMonth = rawDob.getDate();
     const month = rawDob.getMonth() + 1;
@@ -77,7 +54,7 @@ var searchData = (function(exports){
   };
 
   // create a div, insert employee's basic info
-  const makeEmployeeDiv = function(employee, index){
+  exports.makeEmployeeDiv = function(employee, index){
 
     const directory = document.createElement('div');
 
@@ -101,7 +78,7 @@ var searchData = (function(exports){
     employeeLocation.className = 'location';
 
     employeeImg.src = employee.picture.large;
-    employeeFNameLName.textContent = combineProNoun(employee.name.first, ' ', employee.name.last);
+    employeeFNameLName.textContent = exports.combineProNoun(employee.name.first, ' ', employee.name.last);
     employeeEMail.textContent = employee.email;
     employeeLocation.textContent = employee.location.city;
     employeeBasicInfoUl.appendChild(employeeFNameLName);
@@ -114,10 +91,10 @@ var searchData = (function(exports){
   };
 
   // add 1 div with basic info for each employee
-  const makeEmployeeDirectory = function(employees){
+  exports.makeEmployeeDirectory = function(employees){
     let employeeDirectory = document.getElementById('rowDirectory');
     employees.forEach(function(employee, index){
-      employeeDirectory.appendChild(makeEmployeeDiv(employee, index));
+      employeeDirectory.appendChild( exports.makeEmployeeDiv(employee, index));
       });
 
     // controls to toggle back and forth between employees
@@ -133,7 +110,7 @@ var searchData = (function(exports){
     };
 
   // setup eventlistener for each employee div, to open the modal window
-  const enabledModalWindow = function(employees){
+  exports.enableModalWindow = function(employees){
 
     // selecting html elements for opening and closing modal window
     const modal = document.getElementById('modal-dimMainPage');
@@ -157,13 +134,13 @@ var searchData = (function(exports){
         modal.style.display = 'block';
         modalWindow.style.display = "block";
         employeeImg.src = employees[i].picture.large;
-        employeeName.textContent = combineProNoun(employees[i].name.first, ' ', employees[i].name.last);
+        employeeName.textContent = exports.combineProNoun(employees[i].name.first, ' ', employees[i].name.last);
         employeeEmail.textContent = employees[i].email;
         employeeLocation.textContent = employees[i].location.city;
         employeeStreetAddress.textContent = employees[i].location.street;
         employeeCityStateZip.textContent = employees[i].location.city + `, ` + employees[i].location.state  + `, ` + employees[i].location.postcode;
         employeeCellNumber.textContent = employees[i].phone;
-        employeeDOB.textContent = getDOB(employees[i].dob.date);
+        employeeDOB.textContent = exports.getDOB(employees[i].dob.date);
       });
     }
 
@@ -173,6 +150,62 @@ var searchData = (function(exports){
       modalWindow.style.display = "none";
     });
   }
+
+  // display next of prev employee data in modalWindow
+  exports.prevNextEmployee = function(employee){
+    // call enabledModalWindow, passing index of prev or next employee
+  };
+
+  return exports
+
+}(displayData || { }));
+
+// module for search and for displaying search results..
+var searchData = (function(exports){
+
+    const createFilteredDirArray = function(employees, filterByTerm){
+      // use .filter() on employees, using filterByTerm to return a filtered array
+    };
+
+    const searchFilterdDirectory = function(filteredArray, searchTerm){
+      // use .reduce() to find and return an with any matches to searchTerm in filtered array
+    };
+
+    // from main app module
+    // step 1:
+    // after employee directory displayed
+    // call createFilteredDirArray, pass in and create a firstName, LastName, EmailAlias array
+    // step 2:
+    // as search term is typed
+    // call searchFilteredDirectory, returning an array containing matchestoSearch
+    // step 3:
+    // pass matchestoSearch array to makeEmployeeDirectory() function
+    // display filtered employees directory
+    // step 4:
+    // repeat steps 2 and 3 when search submitted
+    // step 5:
+    // when "reset" is submitted, call makeEmployeeDirectory, passing unfiltered employees array
+
+ }(searchData || { } ));
+
+// main app module 
+!(function(getData){
+
+  // an array for the employee directory
+  let employees = [];
+
+  // managing fetch api calls with promise.all()
+    // User-Interface functionality enabled when data returned
+  const getDirectory = function(url){
+    return Promise.all([
+      getData.fetchDataFrom(url)
+    ]).then(data => {
+          getData.fetchResults = data;
+          employees = getData.fetchResults[0].results;
+          displayData.makeEmployeeDirectory(employees);
+          displayData.enableModalWindow(employees);
+      });
+  };
 
   // wait until html page loads, then get 12 random users
   window.onload = function(e){
