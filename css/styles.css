@@ -122,6 +122,14 @@ button:active{
 }
 
 /* formatting for each user, or employee, div in directory */
+.userBox{
+    color: silver;
+    border: 1px solid #eaeaea;
+    border-radius: 2%;
+    background-color: white;
+    align-content: center;
+    margin-bottom: 5px;
+  }
 .userBox:hover {
   box-shadow:5px 5px black;
   background-color:grey;
@@ -134,14 +142,6 @@ button:active{
   background-color:grey;
   border-color:black;
 }
-.userBox{
-    color: silver;
-    border: 1px solid #eaeaea;
-    border-radius: 2%;
-    background-color: white;
-    align-content: center;
-  }
-
 .userBox ul{
   list-style-type: none;
   text-align: left;
