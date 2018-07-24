@@ -19,9 +19,31 @@
 #closeModalWindow{  /* styling the modal window close button */
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 115px;
   color: #424242bd;
-  font-size: 20px;
+  font-size: 15px;
+  font-weight:100;
+  transition: 0.3s;
+  border-style: none;
+  border-radius: 5%;
+}
+#prevModalWindow{  /* styling the modal window prev button */
+  position: absolute;
+  top: 5px;
+  right: 205px;
+  color: #424242bd;
+  font-size: 15px;
+  font-weight:100;
+  transition: 0.3s;
+  border-style: none;
+  border-radius: 5%;
+}
+#nextModalWindow{ /* styling the modal window next button */
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  color: #424242bd;
+  font-size: 15px;
   font-weight:100;
   transition: 0.3s;
   border-style: none;
@@ -37,7 +59,7 @@
   left: 0;
   top: 0;
   width: 260px; /*  width */
-  height: 320px; /* height */
+  height: 340px; /* height */
   overflow: auto; /* Enable scroll if needed */
   border-radius: 2%;
   /* background-color: rgb(255, 255, 255); Fallback color */
@@ -63,6 +85,17 @@
   height: 160px;
   padding: 10px 0;
 }
+.modal-border-ul-top{
+  top: 8px;
+  height: 0;
+}
+  .modal-basic-border-top{ /* a ul/li sets in between basic and contact info */
+    border-bottom:1px solid silver;
+    width: 75%;
+    margin: auto;
+    padding-bottom: 20px;
+    list-style-type: none;
+  }
   .modal-basic-img {
       margin: 10px auto;
       display: block;
@@ -92,7 +125,7 @@
     border-bottom:1px solid silver;
     width: 75%;
     margin: auto;
-    padding-bottom: 10px;
+    padding-bottom: 17px;
     list-style-type: none;
   }
 .modal-contact-ul{
