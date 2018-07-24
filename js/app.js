@@ -1,10 +1,8 @@
   /* TODO:
-      Modal window, hover affect,
       toggle back and forth between employees when modal window open
       search/filter
+      re-factor to use arrow functions and .filter() .map()
   */
-
-// using module pattern for employee directory site
 
 // module for fetch api function calls
 var getData = (function(exports){
@@ -36,6 +34,11 @@ var getData = (function(exports){
   return exports
 
 }(getData || { } ));  // end getDirectory module
+
+// module for search and for displaying search results..
+var searchData = (function(exports){
+    //methods hear
+}(searchData || { } ));
 
 // module for html display and functionality for the employee directory
 !(function(getData){
@@ -112,12 +115,12 @@ var getData = (function(exports){
 
   // add 1 div with basic info for each employee
   const makeEmployeeDirectory = function(employees){
-    let employeeDirectory = document.getElementsByClassName('row')[0];
+    let employeeDirectory = document.getElementById('rowDirectory');
     employees.forEach(function(employee, index){
       employeeDirectory.appendChild(makeEmployeeDiv(employee, index));
       });
 
-    // controls to toggle back and forth between employees  
+    // controls to toggle back and forth between employees
     // document.querySelectorAll('nextEmployee').forEach(function(item, index){
     //   item.addEventListener('click', function(e){
     //     show next employee
@@ -175,22 +178,5 @@ var getData = (function(exports){
   window.onload = function(e){
     let status = getDirectory('https://randomuser.me/api/?results=12&nat=au,br,ca,ch,de,dk,es,fi,fr,gb,ie,no,nl,nz,us');
   };
-
-  /* TODO:  hover affect, search/filter
-
-    // added Modal Window,
-    // eventlistener for each employee box
-    // can open with click on each employee box
-    // and a close button to close the modal window
-
-    // TODO: add employee detail info
-    // TODO: add prev and next functionality to view employee detail info
-
-    // when employee basic info is moused-over
-      // activate 'hover' style
-
-    // search function: filter employee by any of the basic or details info
-  */
-
 
 }(getData));  // end displayDirectory module

@@ -2,10 +2,15 @@
 
 # TODO: STATUS OF PROJECT
 
-    completed so far:
+    up next:
 
-    RWD layout for main directory
-    may do media query styling for modal window also
+      toggle back and forth between employees when modal window open
+      search/filter
+      organize css styling
+      media query styling for modal window also
+      refactor to use es6+, newer js methods and arrow functions
+
+    completed so far:
 
       using module pattern
       able to get 12 random employees
@@ -14,21 +19,20 @@
       main employee directory follows mock-up styling
       adjusted media-queries for RWD
         all basic info and images appear "as designed" for all screen sizes
+        RWD layout for FULL-SCREEN, main directory and Modal Window
 
       modal window
         RWD layout, with selected employee info, looks great!
         ALL appropriate capitalized!
         DOB date parsed and displayed in mm/dd/yyyy format
+        can close and open to show each employee's detail info
 
-     hover affect,
+     hover, active affect,
+       removed standard blue focus outline 
        black border and right, bottom shading with grey background
        looks cool, since font is silver and black
+       all buttons and userBox's have same styling active and hover affect
 
-    up next: toggle back and forth between employees when modal window open
-
-    up next: search/filter
-
-    no bugs remaining
 
 # PHASE 1: Project Prep: COMPLETE
 
@@ -106,6 +110,10 @@
 
          Structure and style
 
+         all ui presentation and visual affects done by css
+
+         only functionality needed to display data done via javascript
+
             The user directory and modal pop up window
             should roughly match the provided mockups.
              Display the users in a grid or table layout
@@ -129,6 +137,9 @@
 
           To do this, you’ll need to request a random user nationality
            that will only return data in the English alphabet.
+
+           Only data in the English alphabet,
+              or latin charset, returned by api call
 
          Note: you don't have to rely on the API to return search results.
          You'll need to write functionality that ...
