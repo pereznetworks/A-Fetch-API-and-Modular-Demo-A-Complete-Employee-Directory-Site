@@ -1,16 +1,13 @@
-  /* TODO:
-      toggle back and forth between employees when modal window open
-      search/filter
-      re-factor to use arrow functions and .filter() .map()
-  */
 
 // module for fetch api function calls
 var getData = (function(exports){
 
+  // variables to store fetch results
   var exports = {
     fetchResults:[]
   }
 
+  // checking the status of the response to fetch api get request
   exports.checkStatus = function(response){
     if (response.ok){  // if 'ok' then return response object and cont.
       return Promise.resolve(response);
@@ -132,7 +129,8 @@ var displayData = (function(exports){
         employeeDOB.textContent = exports.getDOB(employees[i].dob.date);
     };
 
-    // adding an eventlistener for each employee div
+    // eventlistener for each employee div
+    // to display detail info in modal window
     for (let i = 0; i < employeeBoxes.length; i++){
       employeeBoxes[i].addEventListener('click', function(e){
         // const employees = getData.fetchResults[0].results;
@@ -165,12 +163,9 @@ var displayData = (function(exports){
          }
          displayDetailInfo(employees, currentIndex);
       });
-  }
-
-  // display next of prev employee data in modalWindow
-  exports.prevNextEmployee = function(employee){
-    // call enabledModalWindow, passing index of prev or next employee
   };
+
+
 
   return exports
 
@@ -179,6 +174,8 @@ var displayData = (function(exports){
 // module for search and for displaying search results..
 var searchData = (function(exports){
 
+    // method for searching directory
+    // implemented: filter by any char in first or last name
     exports.searchDirectory = function(employees, filteredByTerm){
 
       const getIndexof = function(value, index, array){
@@ -188,7 +185,7 @@ var searchData = (function(exports){
           return array[index];
         }
       };
-
+      // returns array of any matches to filteredByTerm
       return employees.filter(getIndexof);
     };
 
