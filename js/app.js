@@ -96,21 +96,13 @@ var displayData = (function(exports){
     employees.forEach(function(employee, index){
       employeeDirectory.appendChild( exports.makeEmployeeDiv(employee, index));
       });
-
-    // controls to toggle back and forth between employees
-    // document.querySelectorAll('nextEmployee').forEach(function(item, index){
-    //   item.addEventListener('click', function(e){
-    //     show next employee
-    //   });
-    // document.querySelectorAll('prevEmployee').forEach(function(item, index){
-    //   item.addEventListener('click', function(e){
-    //     show next employee
-    //   });
-
     };
 
   // setup eventlistener for each employee div, to open the modal window
   exports.enableModalWindow = function(employees){
+
+    // set index of employee being displayed
+    let currentIndex = 0;
 
     // selecting html elements for opening and closing modal window
     const modal = document.getElementById('modal-dimMainPage');
@@ -126,11 +118,8 @@ var displayData = (function(exports){
     const employeeCellNumber = document.getElementById('phone');
     const employeeDOB = document.getElementById('dob');
 
-    // adding an eventlistener for each employee div
-    for (let i = 0; i < employeeBoxes.length; i++){
-      employeeBoxes[i].addEventListener('click', function(e){
-        const employees = getData.fetchResults[0].results;
-        // display modal and add basic and contact info from employee div clicked on
+    // display modal and add basic and contact info from employee div clicked on
+    const displayDetailInfo = function(employees, i){
         modal.style.display = 'block';
         modalWindow.style.display = "block";
         employeeImg.src = employees[i].picture.large;
@@ -141,6 +130,14 @@ var displayData = (function(exports){
         employeeCityStateZip.textContent = employees[i].location.city + `, ` + employees[i].location.state  + `, ` + employees[i].location.postcode;
         employeeCellNumber.textContent = employees[i].phone;
         employeeDOB.textContent = exports.getDOB(employees[i].dob.date);
+    };
+
+    // adding an eventlistener for each employee div
+    for (let i = 0; i < employeeBoxes.length; i++){
+      employeeBoxes[i].addEventListener('click', function(e){
+        // const employees = getData.fetchResults[0].results;
+        currentIndex = i;
+        displayDetailInfo(employees, currentIndex);
       });
     }
 
@@ -149,6 +146,25 @@ var displayData = (function(exports){
       modal.style.display = 'none';
       modalWindow.style.display = "none";
     });
+
+    // controls to toggle back and forth between employees
+      document.querySelector('#nextModalWindow').addEventListener('click', function(e){
+         if (currentIndex == employees.length -1){
+          currentIndex = 0;
+         } else {
+         currentIndex++;
+         }
+         displayDetailInfo(employees, currentIndex);
+      });
+
+      document.querySelector('#prevModalWindow').addEventListener('click', function(e){
+         if (currentIndex == 0){
+          currentIndex = 11;
+         } else {
+         currentIndex++;
+         }
+         displayDetailInfo(employees, currentIndex);
+      });
   }
 
   // display next of prev employee data in modalWindow
@@ -175,28 +191,6 @@ var searchData = (function(exports){
 
       return employees.filter(getIndexof);
     };
-
-    // from main app module
-    // step 1:
-    // after employee directory displayed
-    // call createFilteredDirArray, pass in and create a firstName, LastName, EmailAlias array
-    // step 2:
-    // as search term is typed
-    // call searchFilteredDirectory, returning an array containing matchestoSearch
-    // step 3:
-    // pass matchestoSearch array to makeEmployeeDirectory() function
-    // display filtered employees directory
-    // step 4:
-    // repeat steps 2 and 3 when search submitted
-    // step 5:
-    // when "reset" is submitted, call makeEmployeeDirectory, passing unfiltered employees array
-    // exports.createFilteredDirArray = function(employees, filterByTerm){
-    //   // use .filter() on employees, using filterByTerm to return a filtered array
-    // };
-    //
-    // exports.searchFilteredDirectory = function(filteredArray, searchTerm){
-    //   // use .reduce() to find and return an with any matches to searchTerm in filtered array
-    // };
 
     return exports
 
