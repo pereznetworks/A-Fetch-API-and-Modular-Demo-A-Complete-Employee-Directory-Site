@@ -1,19 +1,8 @@
 # TD-Project5
 
-# TODO: STATUS OF PROJECT
+# STATUS OF PROJECT
 
-    UP NEXT:
-
-      toggle back and forth between employees when modal window open
-      search/filter
-      refactor to use es6+, newer js methods and arrow functions
-
-    IDEA: enable clicking/tapping phone, address, email
-          to then get action options appropriate for each
-
-          use more modern looking controls for search tools
-
-    completed so far:
+    Project Complete
 
       using module pattern
       able to get 12 random employees
@@ -30,18 +19,22 @@
         DOB date parsed and displayed in mm/dd/yyyy format
         can close and open to show each employee's detail info
 
-     hover, active affect,
-       removed standard blue focus outline
-       black border and right, bottom shading with grey background
-       looks cool, since font is silver and black
-       all buttons and userBox's have same styling active and hover affect
+       hover, active affect,
+         removed standard blue focus outline
+         black border and right, bottom shading with grey background
+         looks cool, since font is silver and black
+         all buttons and userBox's have same styling active and hover affect
 
-     structure and style
-      organize css styling
-      media query styling for modal window
-      tested on windows 10: chrome and edge
-      tested on macOS, chrome and safari
-      tested on iOS, iphone and ipad safari
+       structure and style
+        organize css styling
+        media query styling for modal window
+        tested on windows 10: chrome and edge
+        tested on macOS, chrome and safari
+        tested on iOS, iphone and ipad safari
+
+    search filter on submit and live filter using keyup
+
+    toggle back and forth between employees in modal window
 
 
 # PHASE 1: Project Prep: COMPLETE
