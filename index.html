@@ -10,44 +10,47 @@
   <script src="js/app.js"></script>
 </head>
   <body>
-    <div class="row" id='rowHeader'>
-      <div class="col-6 header" id='rowHeader-col0'>
-        <h2 class="directoryTitle">Awesome Startup Employee Directory</h2>
+    <div class="main">
+      <div class="row" id='rowHeader'>
+        <div class="col-6 header" id='rowHeader-col0'>
+          <h2 class="directoryTitle">Awesome Startup Employee Directory</h2>
+        </div>
+        <div class="col-6 header" id='rowHeader-col1'>
+          <input id='searchInput' type="text" name="searchInput" placeholder='enter search term' value="">
+          <button id='searchButton' type="button" name="SearchButton" value="submit">Search</button>
+        </div>
       </div>
-      <div class="col-6 header" id='rowHeader-col1'>
-        <input id='searchInput' type="text" name="searchInput" placeholder='enter search term' value="">
-        <button id='searchButton' type="button" name="SearchButton">Search</button>
+      <div class="row" id='rowDirectory'>
+      </div>
+
+      <div id="modal-dimMainPage">
+      </div>
+
+      <div id="modal-userBox">
+        <button type="button" name="prev" id='prevModalWindow'>&lt;</button>
+        <button type="button" name="close" id='closeModalWindow'>&times;</button>
+        <button type="button" name="next" id='nextModalWindow'>&gt;</button>
+        <ul class='modal-border-ul-top'>
+          <li class='modal-basic-border-top'></li>
+        </ul>
+        <ul class="modal-basic-ul">
+          <li class="modal-basic-img-il"><img class='modal-basic-img' id='modal-avatarImg'></li>
+          <li class='modal-basic-name' id='name'>First, Last Name</li>
+          <li class='modal-basic-email' id='email'>alias@email.net</li>
+          <li class='modal-basic-location' id='location'>City, State</li>
+        </ul>
+        <ul class='modal-border-ul'>
+          <li class='modal-basic-border'></li>
+        </ul>
+        <ul class="modal-contact-ul">
+          <li class='modal-contact-cellnumber' id='phone'>222-999-0001</li>
+          <li class='modal-contact-address' id='streetAddress'>999 Calle Rico de Avenida de las Pulgas, Apt 1001</li>
+          <li class='modal-contact-address' id='cityStateZip'>Cuidad de las Ricos, Really-Long Province Name, USA 90210</li>
+          <li class='modal-contact-dob' id='dob'>Jan. 1st, 1991</li>
+        </ul>
       </div>
     </div>
 
-    <div class="row" id='rowDirectory'>
-    </div>
 
-    <div id="modal-dimMainPage">
-    </div>
-
-    <div id="modal-userBox">
-      <button type="button" name="prev" id='prevModalWindow'>&lt;</button>
-      <button type="button" name="close" id='closeModalWindow'>&times;</button>
-      <button type="button" name="next" id='nextModalWindow'>&gt;</button>
-      <ul class='modal-border-ul-top'>
-        <li class='modal-basic-border-top'></li>
-      </ul>
-      <ul class="modal-basic-ul">
-        <li class="modal-basic-img-il"><img class='modal-basic-img' id='modal-avatarImg'></li>
-        <li class='modal-basic-name' id='name'>First, Last Name</li>
-        <li class='modal-basic-email' id='email'>alias@email.net</li>
-        <li class='modal-basic-location' id='location'>City, State</li>
-      </ul>
-      <ul class='modal-border-ul'>
-        <li class='modal-basic-border'></li>
-      </ul>
-      <ul class="modal-contact-ul">
-        <li class='modal-contact-cellnumber' id='phone'>222-999-0001</li>
-        <li class='modal-contact-address' id='streetAddress'>999 Calle Rico de Avenida de las Pulgas, Apt 1001</li>
-        <li class='modal-contact-address' id='cityStateZip'>Cuidad de las Ricos, Really-Long Province Name, USA 90210</li>
-        <li class='modal-contact-dob' id='dob'>Jan. 1st, 1991</li>
-      </ul>
-    </div>
   </body>
 </html>

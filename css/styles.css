@@ -7,7 +7,13 @@ body{
   margin: auto;
   background-color: black;
   align-content: center;
-  margin: auto;
+  margin: 2% 2%;
+}
+
+.main{
+  background-color: white;
+  height: 95%;
+  width: 100%;
 }
 
 /* grid formatting of row and columns */
@@ -29,6 +35,7 @@ body{
     clear: both;
     display: table;
     margin: 4%;
+    background-color: white;
 }
 [class*="col-"] {
     float: left;
@@ -36,6 +43,7 @@ body{
     padding: auto;
     border: 1px solid white;
     align-content: center;
+
 }
 .col-1 {width: 8.33%;}
 .col-2 {width: 10%;}
@@ -111,7 +119,7 @@ button:active{
 #rowHeader-col1 input:active,input:hover  {
   outline:none;
   background-color: grey;
-  color: grey;
+  color: white;
   border-radius: 5%;
   border: 1px #000 solid;
 }
@@ -123,6 +131,10 @@ button:active{
 }
 
 /* formatting for each user, or employee, div in directory */
+
+#rowDirectory{
+  height:95%;
+}
 .userBox{
     color: silver;
     border: 1px solid #eaeaea;

@@ -163,12 +163,19 @@ var displayData = (function(exports){
 // module for search and for displaying search results..
 var searchData = (function(exports){
 
-    const createFilteredDirArray = function(employees, filterByTerm){
-      // use .filter() on employees, using filterByTerm to return a filtered array
-    };
+    exports.searchDirectory = function(employees, filteredByTerm){
 
-    const searchFilterdDirectory = function(filteredArray, searchTerm){
-      // use .reduce() to find and return an with any matches to searchTerm in filtered array
+      const getIndexof = function(value, index, array){
+        if (value.name.first === filteredByTerm){
+          return array[index];
+        } else if (value.name.last === filteredByTerm){
+          return array[index];
+        } else if (value.login.username === filteredByTerm){
+          return array[index];
+        }
+      };
+
+      return employees.filter(getIndexof);
     };
 
     // from main app module
@@ -185,10 +192,19 @@ var searchData = (function(exports){
     // repeat steps 2 and 3 when search submitted
     // step 5:
     // when "reset" is submitted, call makeEmployeeDirectory, passing unfiltered employees array
+    // exports.createFilteredDirArray = function(employees, filterByTerm){
+    //   // use .filter() on employees, using filterByTerm to return a filtered array
+    // };
+    //
+    // exports.searchFilteredDirectory = function(filteredArray, searchTerm){
+    //   // use .reduce() to find and return an with any matches to searchTerm in filtered array
+    // };
+
+    return exports
 
  }(searchData || { } ));
 
-// main app module 
+// main app module
 !(function(getData){
 
   // an array for the employee directory
@@ -204,12 +220,22 @@ var searchData = (function(exports){
           employees = getData.fetchResults[0].results;
           displayData.makeEmployeeDirectory(employees);
           displayData.enableModalWindow(employees);
+          document.getElementById("searchButton").addEventListener('click', function(e){
+            document.getElementById('rowDirectory').innerHTML = ''; 
+            let filterByTerm = e.target.previousElementSibling.value.toLowerCase();
+            let filteredEmployees = searchData.searchDirectory(employees, filterByTerm);
+            displayData.makeEmployeeDirectory(filteredEmployees);
+          });
+
       });
   };
 
   // wait until html page loads, then get 12 random users
   window.onload = function(e){
+
     let status = getDirectory('https://randomuser.me/api/?results=12&nat=au,br,ca,ch,de,dk,es,fi,fr,gb,ie,no,nl,nz,us');
+
+
   };
 
 }(getData));  // end displayDirectory module
