@@ -137,7 +137,7 @@
 
                 add a hover state to the employee items
 
-# PHASE 3: Extra Credit Features: NEXT UP
+# PHASE 3: Extra Credit Features: COMPLETE
 
     To get an "exceeds" rating,
     you can expand on the project in the following ways:
