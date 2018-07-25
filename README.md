@@ -1,40 +1,48 @@
 # TD-Project5
 
-# STATUS OF PROJECT
+# STATUS OF PROJECT: COMPLETE
 
-    Project Complete
+    Requirements
 
-      using module pattern
-      able to get 12 random employees
-      able to extract basic info for each
-      main employee directory displays employee basic info
-      main employee directory follows mock-up styling
-      adjusted media-queries for RWD
-        all basic info and images appear "as designed" for all screen sizes
-        RWD layout for FULL-SCREEN, main directory and Modal Window
+          able to get 12 random employees with latin charset only
+          able to extract basic info for each
+            display as an employee directory
+            in grid layout
 
-      modal window
-        RWD layout, with selected employee info, looks great!
-        ALL appropriate capitalized!
-        DOB date parsed and displayed in mm/dd/yyyy format
-        can close and open to show each employee's detail info
+          modal window
+            in modal window, main directory is inactive
+            appropriate letters capitalized!
+            DOB date parsed and displayed in mm/dd/yyyy format
+            can close and open to show each employee's detail info
 
-       hover, active affect,
-         removed standard blue focus outline
-         black border and right, bottom shading with grey background
-         looks cool, since font is silver and black
-         all buttons and userBox's have same styling active and hover affect
+          hover, active state on employees in main directory,
+            removed standard blue focus outline
+            black border and right, bottom shading with grey background
+            all buttons and userBox's have same styling active and hover state
 
-       structure and style
-        organize css styling
-        media query styling for modal window
-        tested on windows 10: chrome and edge
-        tested on macOS, chrome and safari
-        tested on iOS, iphone and ipad safari
+          structure and style
+            matches mock up
+            organized css styling
+              styles.css - main directory
+              modalStyles.css - modal window
+            media query styling for modal window
+              tested on windows 10: chrome and edge
+              tested on macOS, chrome and safari
+              tested on iOS, iphone and ipad safari
 
-    search filter on submit and live filter using keyup
+    EXTRA CREDIT FEATURES
 
-    toggle back and forth between employees in modal window
+          search filter displays results
+            using click event
+            when entering text in input field and clicking search button
+
+          search filter also...
+            displays search results as user types in input field
+            using keyup event
+
+          toggle back and forth between employees in modal window
+            using click event
+            can display prev or next employee detail info in modal window
 
 
 # PHASE 1: Project Prep: COMPLETE
@@ -114,8 +122,8 @@
          Structure and style
 
          all ui presentation and visual affects done by css
-
-         only functionality needed to display data done via javascript
+         only functionality needed to....
+          get, display and search data is done via javascript
 
             The user directory and modal pop up window
             should roughly match the provided mockups.
