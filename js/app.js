@@ -166,11 +166,9 @@ var searchData = (function(exports){
     exports.searchDirectory = function(employees, filteredByTerm){
 
       const getIndexof = function(value, index, array){
-        if (value.name.first === filteredByTerm){
+        if (value.name.first === filteredByTerm || value.name.first.includes(filteredByTerm)){
           return array[index];
-        } else if (value.name.last === filteredByTerm){
-          return array[index];
-        } else if (value.login.username === filteredByTerm){
+        } else if (value.name.last === filteredByTerm || value.name.last.includes(filteredByTerm)){
           return array[index];
         }
       };
@@ -221,8 +219,14 @@ var searchData = (function(exports){
           displayData.makeEmployeeDirectory(employees);
           displayData.enableModalWindow(employees);
           document.getElementById("searchButton").addEventListener('click', function(e){
-            document.getElementById('rowDirectory').innerHTML = ''; 
+            document.getElementById('rowDirectory').innerHTML = '';
             let filterByTerm = e.target.previousElementSibling.value.toLowerCase();
+            let filteredEmployees = searchData.searchDirectory(employees, filterByTerm);
+            displayData.makeEmployeeDirectory(filteredEmployees);
+          });
+          document.getElementById("searchInput").addEventListener('keyup', function(e){
+            document.getElementById('rowDirectory').innerHTML = '';
+            let filterByTerm = e.target.value.toLowerCase();
             let filteredEmployees = searchData.searchDirectory(employees, filterByTerm);
             displayData.makeEmployeeDirectory(filteredEmployees);
           });
