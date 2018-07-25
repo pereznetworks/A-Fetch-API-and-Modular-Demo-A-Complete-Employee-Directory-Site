@@ -13,36 +13,35 @@
     align-content: center;
     list-style-type: none;
 }
-#modal-userBox{  /* the modal window itself*/
-  display: none;  /* hidden initially */
-  margin: 10%; /* places content in roughly center of window */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  /* padding-top: 100px;  Location of the box */
+/* the modal window itself*/
+#modal-userBox{
+  display: none;
+  margin: 10%;
+  position: fi
   left: 0;
   top: 0;
   width:300px;
   height:400px;
-  overflow: auto; /* Enable scroll if needed */
+  overflow: auto;
   border-radius: 2%;
-  /* background-color: rgb(255, 255, 255); Fallback color */
-  background-color: rgba(255, 255, 255,1); /* White, Solid */
+  background-color: rgba(255, 255, 255,1);
 }
 
+  /* dim the main directory when modal window is displayed */
 #modal-dimMainPage{
-  /* dim when modal window enabled */
   display: none;  /* hidden initially */
   left 0;
   top: 0;
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed;
+  z-index: 1;
   height: 100%;
   width: 100%;*
   margin: auto;
   padding: 0;
   background-color: rgba(192, 192, 192, .5);
 }
-#closeModalWindow{  /* styling the modal window close button */
+/* styling the modal window close button */
+#closeModalWindow{
   position: absolute;
   top: 1.5%;
   right: 40%;
@@ -53,7 +52,8 @@
   border-style: none;
   border-radius: 5%;
 }
-#prevModalWindow{  /* styling the modal window prev button */
+/* styling the modal window prev button */
+#prevModalWindow{
   position: absolute;
   top: 1.5%;
   right:76%;
@@ -64,7 +64,8 @@
   border-style: none;
   border-radius: 5%;
 }
-#nextModalWindow{ /* styling the modal window next button */
+/* styling the modal window next button */
+#nextModalWindow{
   position: absolute;
   top: 1.5%;
   right:6%;
@@ -75,7 +76,7 @@
   border-style: none;
   border-radius: 5%;
 }
-
+/* styling for element inside modal windows */
 .capitalize{
   text-transform: capitalize;
 }
@@ -89,7 +90,7 @@
   height: 7%;
   margin-top: 10%;
 }
-  .modal-basic-border-top{ /* a ul/li sets in between basic and contact info */
+  .modal-basic-border-top{
     border-bottom:1px solid silver;
     width: 75%;
     margin: auto;
@@ -123,7 +124,7 @@
   margin: auto;
   height: 20px;
 }
-  .modal-basic-border{ /* a ul/li sets in between basic and contact info */
+  .modal-basic-border{
     border-bottom:1px solid silver;
     width: 75%;
     margin: auto;
@@ -135,7 +136,8 @@
   margin-top: 5%;
 }
 [class*="modal-contact"]{
-    /*font-size: .8em;
+    /*  saving these setting just in case of changes or updated that may be done in the future
+    font-size: .8em;
     display: block;
     width: 100%;
     max-width: 100%;
@@ -152,6 +154,8 @@
   .modal-contact-cellnumber{}
   .modal-contact-dob{}
 
+/* modal window is designed mobile first */
+/* the following settings are for full desktop/laptop screens */
 @media only screen and (min-width: 620px){
   #modal-userBox{
     margin:10% 34%;
