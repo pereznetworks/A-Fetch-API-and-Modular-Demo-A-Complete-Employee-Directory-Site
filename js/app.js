@@ -56,11 +56,14 @@ var displayData = (function(exports){
     const directory = document.createElement('div');
 
     const employeeBasicInfoDiv = document.createElement('div');
-    employeeBasicInfoDiv.className = 'col-4 userBox';
+    employeeBasicInfoDiv.className = 'col-3 userBox';
     employeeBasicInfoDiv.id = `userBox-${index}`
 
+    const employeeImgLi = document.createElement('li');
+    employeeImgLi.className = 'img-li';
     const employeeImg = document.createElement('img');
     employeeImg.className = 'avatarImg';
+    employeeImgLi.appendChild(employeeImg);
 
     const employeeBasicInfoUl = document.createElement('ul');
     employeeBasicInfoUl.className = 'BasicInfo';
@@ -78,11 +81,15 @@ var displayData = (function(exports){
     employeeFNameLName.textContent = exports.combineProNoun(employee.name.first, ' ', employee.name.last);
     employeeEMail.textContent = employee.email;
     employeeLocation.textContent = employee.location.city;
+    employeeBasicInfoUl.appendChild(employeeImgLi);
     employeeBasicInfoUl.appendChild(employeeFNameLName);
     employeeBasicInfoUl.appendChild(employeeEMail);
     employeeBasicInfoUl.appendChild(employeeLocation);
     employeeBasicInfoDiv.appendChild(employeeImg);
     employeeBasicInfoDiv.appendChild(employeeBasicInfoUl);
+
+
+    document.getElementById('iftakingTooLong').style.display='none';
 
     return employeeBasicInfoDiv;
   };
@@ -90,7 +97,6 @@ var displayData = (function(exports){
   // add 1 div with basic info for each employee
   exports.makeEmployeeDirectory = function(employees){
     let employeeDirectory = document.getElementById('rowDirectory');
-    //document.getElementById('iftakingTooLong').style.display='none';
     employees.forEach(function(employee, index){
       employeeDirectory.appendChild( exports.makeEmployeeDiv(employee, index));
       });
@@ -104,7 +110,7 @@ var displayData = (function(exports){
 
     // selecting html elements for opening and closing modal window
     const modal = document.getElementById('modal-dimMainPage');
-    const employeeBoxes = document.getElementsByClassName('col-4');
+    const employeeBoxes = document.getElementsByClassName('col-3');
     const modalWindow = document.getElementById('modal-userBox');
     const closeModalWindow = document.getElementById('closeModalWindow');
     const employeeImg = document.getElementById('modal-avatarImg');
@@ -148,7 +154,7 @@ var displayData = (function(exports){
 
     // controls to toggle back and forth between employees
       document.querySelector('#nextModalWindow').addEventListener('click', function(e){
-         if (currentIndex == employees.length -1){
+         if (currentIndex == employees.length - 1){
           currentIndex = 0;
          } else {
          currentIndex++;
@@ -160,7 +166,7 @@ var displayData = (function(exports){
          if (currentIndex == 0){
           currentIndex = 11;
          } else {
-         currentIndex++;
+         currentIndex--;
          }
          displayDetailInfo(employees, currentIndex);
       });

@@ -106,12 +106,13 @@ button:active{
 }
 
 #rowHeader-col1 input {
+  width: 25%;
   margin-top: 6%;
   margin-left: 50%;
   border-radius: 5%;
   border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
   border: 1px silver solid;
-  padding: 1px 7px 2px;
+  padding: 1px 7px 2px 1px;
 }
 
 #rowHeader-col1 input:focus{outline:none;}
@@ -142,6 +143,7 @@ button:active{
     background-color: white;
     align-content: center;
     margin-bottom: 5px;
+    width: 32%;
   }
 .userBox:hover {
   box-shadow:5px 5px black;
