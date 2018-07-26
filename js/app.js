@@ -90,6 +90,7 @@ var displayData = (function(exports){
   // add 1 div with basic info for each employee
   exports.makeEmployeeDirectory = function(employees){
     let employeeDirectory = document.getElementById('rowDirectory');
+    document.getElementById('iftakingTooLong').style.display='none';
     employees.forEach(function(employee, index){
       employeeDirectory.appendChild( exports.makeEmployeeDiv(employee, index));
       });
