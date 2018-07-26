@@ -28,7 +28,6 @@
             media query styling for modal window
               tested on windows 10: chrome and edge
               tested on macOS, chrome and safari
-              tested on iOS, iphone and ipad safari
 
     EXTRA CREDIT FEATURES
 

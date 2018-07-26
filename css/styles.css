@@ -106,7 +106,7 @@ button:active{
 }
 
 #rowHeader-col1 input {
-  width: 25%;
+  width: auto;
   margin-top: 6%;
   margin-left: 50%;
   border-radius: 5%;
@@ -299,6 +299,11 @@ button:active{
     font-size: 1.2em;
   }
 }
+@media only screen and (min-width: 768px){
+  .col-3 {
+    width: 30%;
+  }
+}
 @media screen and (max-width: 720px){
   #rowHeader-col1{
     width: 45%;
@@ -316,7 +321,7 @@ button:active{
   #rowHeader-col1{
     width: 40%;
   }
-  .col-4 {
+  .col-3 {
     margin-left: 4%;
     width: 40%;
   }
