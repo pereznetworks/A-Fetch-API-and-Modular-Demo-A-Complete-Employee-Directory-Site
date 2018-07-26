@@ -88,7 +88,6 @@ var displayData = (function(exports){
     employeeBasicInfoDiv.appendChild(employeeImg);
     employeeBasicInfoDiv.appendChild(employeeBasicInfoUl);
 
-
     document.getElementById('iftakingTooLong').style.display='none';
 
     return employeeBasicInfoDiv;
@@ -153,7 +152,7 @@ var displayData = (function(exports){
     });
 
     // controls to toggle back and forth between employees
-      document.querySelector('#nextModalWindow').addEventListener('click', function(e){
+    document.querySelector('#nextModalWindow').addEventListener('click', function(e){
          if (currentIndex == employees.length - 1){
           currentIndex = 0;
          } else {
@@ -162,7 +161,7 @@ var displayData = (function(exports){
          displayDetailInfo(employees, currentIndex);
       });
 
-      document.querySelector('#prevModalWindow').addEventListener('click', function(e){
+    document.querySelector('#prevModalWindow').addEventListener('click', function(e){
          if (currentIndex == 0){
           currentIndex = 11;
          } else {
@@ -171,8 +170,6 @@ var displayData = (function(exports){
          displayDetailInfo(employees, currentIndex);
       });
   };
-
-
 
   return exports
 
