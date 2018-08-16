@@ -218,14 +218,14 @@ var searchData = (function(exports){
             let filterByTerm = e.target.previousElementSibling.value.toLowerCase();
             let filteredEmployees = searchData.searchDirectory(employees, filterByTerm);
             displayData.makeEmployeeDirectory(filteredEmployees);
-            displayData.enableModalWindow(employees);
+            displayData.enableModalWindow(filteredEmployees);
           });
           document.getElementById("searchInput").addEventListener('keyup', function(e){
             document.getElementById('rowDirectory').innerHTML = '';
             let filterByTerm = e.target.value.toLowerCase();
             let filteredEmployees = searchData.searchDirectory(employees, filterByTerm);
             displayData.makeEmployeeDirectory(filteredEmployees);
-            displayData.enableModalWindow(employees);
+            displayData.enableModalWindow(filteredEmployees);
           });
 
       });
