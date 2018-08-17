@@ -334,7 +334,7 @@ button:active{
 }
 @media screen and (max-width: 680px){
   #rowHeader{
-    margin:0 1% 0 2.5%;
+    margin:0 1%;
   }
   #rowHeader-col0{
     margin-left: 4%;
