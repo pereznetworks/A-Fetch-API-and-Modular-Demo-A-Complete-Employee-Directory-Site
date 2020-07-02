@@ -1,5 +1,8 @@
 # TD-Project5
 
+this is Project 2,
+part of TeamTreehouse, Tech Degree, Full Stack JavaScript, Unit 5
+
 # STATUS OF PROJECT: COMPLETE
 
     Requirements
