@@ -6,7 +6,7 @@
 
 ## Places to Start
 
-  - So this projects demonstrates an implementation of some fairly advanced programing:
+  - So this project demonstrates an implementation of some fairly advanced programing:
     - Fetch API,
     - Module pattern using javascript Closures
     - Modal dialog (***not a pop-ups***)
