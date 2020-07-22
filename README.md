@@ -6,8 +6,16 @@
 
 ## Places to Start
 
-  - So implementing Fetch API, using the Module pattern and modal dialog (not a pop-up) are each advanced topics
-    - Doing this all in the same project, requires **skill and patience**
+  - So this projects demonstrates an implementation of some fairly advanced programing:
+    - Fetch API,
+    - Module pattern using javascript Closures
+    - Modal dialog (***not a pop-ups***)
+    - Handle all UI events with CSS only
+
+  - Doing this all in the same project, requires **skill and patience**
+
+
+  - The plan is to break these down into simpler steps
 
 
   - While I rewrite this, here are some places to get started
