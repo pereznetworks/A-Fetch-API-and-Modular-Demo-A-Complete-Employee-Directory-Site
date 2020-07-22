@@ -65,11 +65,13 @@
     - start to think about how you’ll access the correct information
     - and how to display it on the page.
 
+
   - from employee_directory_v1/layoutSample
 
     - adapted layout using html and css to match samples
     - setup html templates
     - integrate html templates
+
 
   - from ~/employee_directory_v1/fetchSample
 
@@ -103,17 +105,21 @@
         - including street name and number, state or country, and post code.
         - Birthday
 
+
   - Make sure there’s a way to close the modal window
 
 ### Structure and style
 
   - all ui presentation and visual affects done by css
 
+
   - only functionality needed to get, display and search data is done via javascript
+
 
   - The user directory and modal pop up window should:   
     - roughly match the provided mockups.
     - Display the users in a grid or table layout
+
 
   - implement a UI with:  
     - Employee directory.
@@ -133,7 +139,7 @@
 
     - You'll need to write functionality that ...
     - filters results once they already on the page.
-    
+
 
   - move back and forth with-in the modal window.
 
