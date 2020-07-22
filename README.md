@@ -7,8 +7,9 @@
 ## Places to Start
 
   - So implementing Fetch API, using the Module pattern and modal dialog (not a pop-up) are each advanced topics
-    - Doing this all in the same project, requires *skill and patience*
-    
+    - Doing this all in the same project, requires **skill and patience**
+
+
   - While I rewrite this, here are some places to get started
 
 ### Fetch API
