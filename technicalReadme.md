@@ -92,6 +92,8 @@
     - Email
     - City or location
 
+  - test that the fetch api code works with no bugs
+
 ### Use a Modal window
 
   - When any part of an employee item in the directory is clicked,
@@ -105,8 +107,9 @@
         - including street name and number, state or country, and post code.
         - Birthday
 
-
   - Make sure there’s a way to close the modal window
+
+  - make sure there are no bugs
 
 ### Structure and style
 
@@ -121,10 +124,12 @@
     - Display the users in a grid or table layout
 
 
-  - implement a UI with:  
+  - implement and test UI with:  
     - Employee directory.
     - layout for modal window
     - add a hover state to the employee items
+
+  - again, make sure there are no bugs
 
 ## PHASE 3: Advanced Features
 
@@ -140,8 +145,12 @@
   - You'll need to write functionality that ...
   - filters results once they already on the page.
 
+  - again, test and fix all bugs
+
 ### browse details with-in the modal window.
 
   - browse employee details while still in the modal window is open.
+
+  - test and fix all bugs
 
 #### [Back to Project Home](README.md)
