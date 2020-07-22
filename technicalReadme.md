@@ -41,8 +41,8 @@
   - displays search results as user types in input field using keyup event
 
 ### move back and forth between employees in modal window
-    - using click event
-    - can display prev or next employee detail info in modal window
+  - using click event
+  - can display prev or next employee detail info in modal window
 
 ## PHASE 1: Project Prep:
 
@@ -83,12 +83,12 @@
 
 ### Get and display 12 random users
 
-    - Using information provided from the random user generator api, display 12 users,
-    - along with some basic information for each:
-      - Image
-      - First and Last Name
-      - Email
-      - City or location
+  - Using information provided from the random user generator api, display 12 users,
+  - along with some basic information for each:
+    - Image
+    - First and Last Name
+    - Email
+    - City or location
 
 ### Use a Modal window
 
