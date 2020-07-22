@@ -7,10 +7,10 @@
 ## Places to Start
 
   - So this project demonstrates an implementation of some fairly advanced programing:
-  
+
     - Fetch API,
     - Module pattern using javascript Closures
-    - Modal dialog (***not a pop-ups***)
+    - Modal dialog (***not pop-ups***)
     - Handling all UI events with CSS only
 
 
