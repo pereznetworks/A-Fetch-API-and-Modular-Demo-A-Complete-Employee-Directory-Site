@@ -25,9 +25,15 @@
 
 ### The Module Pattern
 
+  - [Start here, for an introduction to Clusores in Javascript](https://www.w3schools.com/js/js_function_closures.asp)
+
   - [Start here, for how to use the "module pattern" with javascript closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
-### Modal dialogs with css
+  -[Jump to here, if just need a refresher](https://medium.com/javascript-in-plain-english/javascript-design-pattern-module-pattern-555737eccecd)
+
+### Modal dialogs and responding to event with css
+
+  - [Start here, for CSS selectors](https://www.w3schools.com/CSSref/css_selectors.asp)
 
   - [Start here for how to do modal dialogs with css](https://www.w3schools.com/howto/howto_css_modals.asp)
 
