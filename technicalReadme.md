@@ -81,7 +81,7 @@
     - store the 12 random users in a "employee" array
     - reloading page fetch 12 completely different random persons
 
-## PHASE 2: Required Features and Functionality
+## PHASE 2: Basic Features and Functionality
 
 ### Get and display 12 random users
 
