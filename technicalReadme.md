@@ -133,6 +133,7 @@
 
     - You'll need to write functionality that ...
     - filters results once they already on the page.
+    
 
   - move back and forth with-in the modal window.
 
