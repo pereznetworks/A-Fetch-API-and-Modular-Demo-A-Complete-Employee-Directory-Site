@@ -5,9 +5,9 @@
 
 ### Results from Fetch API
 
-- able to get 12 random employees with latin charset only
+- able to get 12 random s with latin charset only
 - able to extract basic info for each
-  - display as an employee directory
+  - display as an  directory
   - in grid layout
 
 ### modal window
@@ -15,9 +15,9 @@
   - in modal window, main directory is inactive
   - appropriate letters capitalized!
   - DOB date parsed and displayed in mm/dd/yyyy format
-  - can close and open to show each employee's detail info
+  - can close and open to show each 's detail info
 
-### hover, active state on employees in main directory
+### hover, active state on s in main directory
 
   - customized focus outline
   - black border and right, bottom shading with grey background
@@ -128,7 +128,7 @@
 
 ## PHASE 3: Advanced Features
 
-### filter the directory by name or username.
+### filter the directory by name or employee name.
 
   - To do this, you’ll need to request a random user nationality
   - that will only return data in the English alphabet.
@@ -140,9 +140,9 @@
   - You'll need to write functionality that ...
   - filters results once they already on the page.
 
-### browse employee details with-in the modal window.
+### browse  details with-in the modal window.
 
   - Add a way to toggle back and forth
-  - browse between employees when the modal window is open.
+  - browse between s when the modal window is open.
 
 #### [Back to Project Home](README.md)
