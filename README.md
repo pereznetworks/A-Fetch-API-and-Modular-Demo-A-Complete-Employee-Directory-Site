@@ -18,7 +18,7 @@
 
 
   - While I rewrite this, here are some places to get you started
-    - after working through the following links, the code in this project should be a bit more self-explanatory 
+    - after working through the following links, the code in this project should be a bit more self-explanatory
 
 ### Fetch API
 
@@ -30,7 +30,8 @@
 
   - [Start here, for how to use the "module pattern" with javascript closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
-  -[Jump to here, if just need a refresher](https://medium.com/javascript-in-plain-english/javascript-design-pattern-module-pattern-555737eccecd)
+
+  - [Jump to here, if just need a refresher](https://medium.com/javascript-in-plain-english/javascript-design-pattern-module-pattern-555737eccecd)
 
 ### Modal dialogs and responding to event with css
 
