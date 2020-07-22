@@ -17,7 +17,7 @@
     - The plan is to break these down into simpler steps
 
 
-  - While I rewrite this, here are some places to get started
+  - While I rewrite this, here are some places to get you started
 
 ### Fetch API
 
