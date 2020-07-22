@@ -126,24 +126,23 @@
     - layout for modal window
     - add a hover state to the employee items
 
-### PHASE 3: Advanced Features
+## PHASE 3: Advanced Features
 
-  - filter the directory by name or username.
+### filter the directory by name or username.
 
-    - To do this, you’ll need to request a random user nationality
-    - that will only return data in the English alphabet.
+  - To do this, you’ll need to request a random user nationality
+  - that will only return data in the English alphabet.
 
-    - Only data in the English alphabet, or latin charset, should be returned by the api call
+  - Only data in the English alphabet, or latin charset, should be returned by the api call
 
-    -  Note: you don't have to rely on the API to return search results.
+  -  Note: you don't have to rely on the API to return search results.
 
-    - You'll need to write functionality that ...
-    - filters results once they already on the page.
+  - You'll need to write functionality that ...
+  - filters results once they already on the page.
 
+### browse employee details with-in the modal window.
 
-  - move back and forth with-in the modal window.
-
-    - Add a way to toggle back and forth
-    - between employees when the modal window is open.
+  - Add a way to toggle back and forth
+  - browse between employees when the modal window is open.
 
 #### [Back to Project Home](README.md)
