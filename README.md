@@ -18,6 +18,7 @@
 
 
   - While I rewrite this, here are some places to get you started
+    - after working through the following links, the code in this project should be a bit more self-explanatory 
 
 ### Fetch API
 
