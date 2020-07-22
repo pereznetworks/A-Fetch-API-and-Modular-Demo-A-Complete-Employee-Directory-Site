@@ -1,4 +1,4 @@
-# A Fetch API and Modular approach demo: A Complete Employee Directory Site
+# An Advanced Demo - A Complete Employee Directory Site
 
   - Eventually, this will be adapted to be a how-to tutorial
 
@@ -7,6 +7,7 @@
 ## Places to Start
 
   - So this project demonstrates an implementation of some fairly advanced programing:
+  
     - Fetch API,
     - Module pattern using javascript Closures
     - Modal dialog (***not a pop-ups***)
