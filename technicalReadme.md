@@ -140,9 +140,8 @@
   - You'll need to write functionality that ...
   - filters results once they already on the page.
 
-### browse  details with-in the modal window.
+### browse details with-in the modal window.
 
-  - Add a way to toggle back and forth
-  - browse between s when the modal window is open.
+  - browse employee details while still in the modal window is open.
 
 #### [Back to Project Home](README.md)
